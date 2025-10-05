@@ -2,17 +2,17 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-const currentSemester = {
-  title: "Semester 1 — Foundations of AI",
-  duration: "Sep – Dec 2025",
-  focus: "Building strong Python & DSA foundations for AI",
-  goals: [
-    "Fluent in Python",
-    "3 Mini Projects + 1 Smart Campus Assistant",
-    "Launch GitHub Portfolio",
-  ],
-  mantra: "Done, documented, deployed beats perfect.",
-};
+// const currentSemester = {
+//   title: "Semester 1 — Foundations of AI",
+//   duration: "Sep – Dec 2025",
+//   focus: "Building strong Python & DSA foundations for AI",
+//   goals: [
+//     "Fluent in Python",
+//     "3 Mini Projects + 1 Smart Campus Assistant",
+//     "Launch GitHub Portfolio",
+//   ],
+//   mantra: "Done, documented, deployed beats perfect.",
+// };
 
 const HeroProfileSection = () => {
   return (
@@ -45,7 +45,7 @@ const HeroProfileSection = () => {
           className="space-y-4"
         >
           <h1 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-            Hey, I'm Paul Murithi
+            Hey, I&apos;m Paul Murithi
           </h1>
           <h2 className="text-lg md:text-xl text-gray-300 font-medium">
             BSc IT Student • Aspiring AI & Backend Engineer

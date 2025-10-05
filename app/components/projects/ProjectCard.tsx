@@ -37,7 +37,9 @@ export default function ProjectCard({ project, index, onSelect }: Props) {
           ) : (
             <ProjectPlaceholder
               title={project.title}
-              status={project.status as any}
+              status={
+                project.status === "upcoming" ? "planned" : project.status
+              }
               tags={project.tags}
             />
           )}
@@ -53,7 +55,7 @@ export default function ProjectCard({ project, index, onSelect }: Props) {
             )}
 
             {/*Status badge */}
-            <span
+            {/* <span
               className={`text-xs font-medium px-2 py-0.5 rounded-full ${
                 project.status === "in-progress"
                   ? "bg-green-500/20 text-green-400 border border-green-500/30"
@@ -61,7 +63,7 @@ export default function ProjectCard({ project, index, onSelect }: Props) {
               }`}
             >
               {project.status === "in-progress" ? "In Progress" : "Upcoming"}
-            </span>
+            </span> */}
           </div>
 
           <h3 className="text-lg font-semibold mt-1 text-white line-clamp-2">
