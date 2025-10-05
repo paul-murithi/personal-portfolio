@@ -36,7 +36,7 @@ const ContactSection = () => {
           transition={{ duration: 1 }}
         >
           <a
-            href="mailto:youremail@example.com"
+            href="mailto:paulmurithi518@gmail.com"
             className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-medium shadow-lg hover:shadow-cyan-500/30 hover:scale-105 transition transform"
           >
             📩 Email Me
@@ -51,7 +51,7 @@ const ContactSection = () => {
           transition={{ delay: 0.3 }}
         >
           <a
-            href="https://github.com/yourusername"
+            href="https://github.com/paul-murithi"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-400 hover:text-cyan-400 transition"
@@ -59,7 +59,7 @@ const ContactSection = () => {
             <FaGithub size={22} />
           </a>
           <a
-            href="https://linkedin.com/in/yourusername"
+            href="https://linkedin.com/in/paul-murithi-a14482355/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-400 hover:text-cyan-400 transition"
@@ -67,7 +67,7 @@ const ContactSection = () => {
             <FaLinkedin size={22} />
           </a>
           <a
-            href="mailto:youremail@example.com"
+            href="mailto:paulmurithi518@gmail.com"
             className="text-gray-400 hover:text-cyan-400 transition"
           >
             <FaEnvelope size={22} />

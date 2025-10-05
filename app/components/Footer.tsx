@@ -20,7 +20,7 @@ const Footer = () => {
         {/* My Social Links */}
         <div className="flex items-center space-x-5">
           <a
-            href="https://github.com/yourusername"
+            href="https://github.com/paul-murithi"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-400 hover:text-cyan-400 transition"
@@ -29,7 +29,7 @@ const Footer = () => {
             <FaGithub size={18} />
           </a>
           <a
-            href="https://linkedin.com/in/yourusername"
+            href="https://www.linkedin.com/in/paul-murithi-a14482355/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-400 hover:text-cyan-400 transition"
@@ -38,7 +38,7 @@ const Footer = () => {
             <FaLinkedin size={18} />
           </a>
           <a
-            href="https://twitter.com/yourusername"
+            href="https://x.com/__the__bird__"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-400 hover:text-cyan-400 transition"
