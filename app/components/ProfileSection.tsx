@@ -50,6 +50,21 @@ const HeroProfileSection = () => {
           <h2 className="text-lg md:text-xl text-gray-300 font-medium">
             BSc IT Student • Aspiring AI & Backend Engineer
           </h2>
+          <p className="flex items-center justify-center text-gray-400 text-sm mt-2">
+            <svg
+              className="w-4 h-4 mr-2 text-cyan-400"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M21 10c0 6-9 11-9 11S3 16 3 10a9 9 0 1118 0z" />
+              <circle cx="12" cy="10" r="3" fill="currentColor" />
+            </svg>
+            Mount Kenya University, Meru, kenya
+          </p>
 
           <p className="text-gray-400 max-w-lg mx-auto leading-relaxed">
             Passionate about building AI-powered tools and full-stack apps that

@@ -40,7 +40,7 @@ const journeyYears = [
       "Capstone: AI Career Navigator",
     ],
     skills: ["Hugging Face", "System Design", "CI/CD", "Monitoring"],
-    mantra: "Graduate with proof, not promises.",
+    mantra: "Graduate with proof!",
   },
 ];
 
@@ -58,8 +58,8 @@ const JourneySnapshot = () => {
             My Applied AI Journey
           </motion.h2>
           <p className="text-gray-400 mt-2">
-            A year-by-year snapshot of how I’ve grown into a full-stack AI
-            engineer.
+            A year-by-year snapshot of my journey as a student building skills
+            toward a career in applied AI.
           </p>
         </div>
 
@@ -92,9 +92,7 @@ const JourneySnapshot = () => {
               </div>
 
               <div className="mb-3">
-                <h4 className="text-cyan-300 font-semibold mb-1">
-                  🛠 Key Skills
-                </h4>
+                <h4 className="text-cyan-300 font-semibold mb-2">Key Skills</h4>
                 <div className="flex flex-wrap gap-2">
                   {year.skills.map((s) => (
                     <span

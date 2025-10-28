@@ -4,31 +4,13 @@ import { FaExternalLinkAlt } from "react-icons/fa";
 
 const posts = [
   {
-    title: "Week 1: Starting My AI Journey",
-    date: "Sep 10, 2025",
+    title: "From Zero to Flask: My Web Dev Kickoff",
+    date: "Oct 20, 2025",
     semester: "Semester 1",
     summary:
-      "Launched my learning roadmap and set up my development environment. Focused on Python basics, CLI tools, and getting into consistent coding habits.",
-    url: "/blog/week-1-starting-ai-journey",
+      "A beginner-friendly journey into Flask web development, covering setup, routing, templates, and deployment.",
+    url: "https://from-zero-to-flask.hashnode.dev/getting-started-with-flask-a-beginners-web-development-journey",
     tags: ["Python", "Roadmap", "Foundations"],
-  },
-  {
-    title: "Project Reflection: CLI Student Grade Manager",
-    date: "Sep 24, 2025",
-    semester: "Semester 1",
-    summary:
-      "Completed my first CLI project! Learned about CRUD logic, JSON persistence, and testing. Reflecting on lessons learned and future improvements.",
-    url: "/blog/cli-student-grade-manager",
-    tags: ["CLI", "Python", "Projects"],
-  },
-  {
-    title: "Week 3: Problem Solving & DSA Foundations",
-    date: "Oct 01, 2025",
-    semester: "Semester 1",
-    summary:
-      "Exploring data structures through practical mini-projects. Understanding arrays, lists, and search algorithms using visual tools.",
-    url: "/blog/week-3-dsa-foundations",
-    tags: ["DSA", "Algorithms", "Learning"],
   },
 ];
 
@@ -49,18 +31,24 @@ const BlogSection = () => {
             🧠 Learning Reflections
           </motion.h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Weekly reflections, lessons learned, and progress updates as I move
-            through each semester of my BSc IT journey.
+            Sharing my journey and insights as I build skills in applied AI and
+            software engineering—one semester at a time.
           </p>
         </div>
 
         {/* Posts Grid */}
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 auto-rows-min">
           {posts.map((post, i) => (
             <motion.a
               key={post.title}
               href={post.url}
-              className="block bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 hover:border-cyan-400/30 hover:shadow-lg hover:shadow-cyan-500/10 transition-all duration-300"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`block bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 hover:border-cyan-400/30 hover:shadow-lg hover:shadow-cyan-500/10 transition-all duration-300 ${
+                posts.length === 1
+                  ? "sm:col-span-2 lg:col-span-3 mx-auto max-w-3xl"
+                  : "w-full"
+              }`}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
@@ -102,7 +90,7 @@ const BlogSection = () => {
         {/* CTA Links */}
         <div className="text-center pt-4">
           <a
-            href="/blog"
+            href="#"
             className="inline-block text-sm text-cyan-400 hover:text-cyan-300 transition"
           >
             View All Posts →

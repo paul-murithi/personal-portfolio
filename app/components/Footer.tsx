@@ -10,11 +10,9 @@ const Footer = () => {
         {/* My personal info */}
         <div className="text-center md:text-left">
           <h3 className="text-sm font-semibold text-gray-300">
-            © {year} Paul Murithi
+            © {year} Paul Murithi — “The Bird”
           </h3>
-          <p className="text-xs text-gray-500">
-            Alias, The bird! Subsidiary of the paulos network
-          </p>
+          <p className="text-xs text-gray-500">Powered by Paulos Network</p>
         </div>
 
         {/* My Social Links */}
