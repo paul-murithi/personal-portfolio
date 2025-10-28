@@ -141,7 +141,7 @@ const HeroProfileSection = () => {
           </a>
 
           <a
-            href="https://linkedin.com/paul-murithi-a14482355"
+            href="www.linkedin.com/in/paul-murithi-a14482355"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center text-sm text-gray-400 hover:text-cyan-400 transition"
