@@ -18,40 +18,41 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Paul Murithi | AI & Backend Developer Portfolio",
+  title: "Paul Murithi | Full-Stack & AI Integration Developer",
   description:
-    "Explore my 6-semester journey through BSc IT — building scalable backends, AI-driven apps, and real-world solutions. Documented growth. Clean code. Modern design.",
+    "Official portfolio of Paul Murithi — a BSc IT student and developer building modern web systems with Python, FastAPI, React, and AI integrations. A 6-trimester journey from code to cloud to intelligent apps.",
   keywords: [
-    "AI Developer",
+    "Full Stack Developer",
     "Backend Developer",
-    "BSc IT",
-    "Next.js",
-    "Tailwind CSS",
-    "Machine Learning",
-    "Python",
+    "Cloud Engineer",
+    "AI Integration",
     "FastAPI",
-    "Flask",
     "React",
-    "Portfolio",
-    "Roadmap",
+    "Python",
+    "Docker",
+    "AWS",
+    "Machine Learning APIs",
+    "BSc IT",
+    "Paul Murithi Portfolio",
+    "Software Engineer Kenya",
     "Student Developer",
-    "Full Stack AI Engineer",
-    "Paul Murithi",
+    "AI Resume Assistant",
+    "ScholarMatch AI",
   ],
   authors: [{ name: "Paul Murithi" }],
-  creator: "Paul murithi",
+  creator: "Paul Murithi",
   openGraph: {
-    title: "Paul Murithi | AI Developer Portfolio",
+    title: "Paul Murithi | Full-Stack Developer & AI Integrator",
     description:
-      "A semester-driven portfolio showcasing projects, skills, and AI systems built throughout my BSc IT journey.",
-    url: "", // TODO: Add domain URL
+      "Portfolio and roadmap of Paul Murithi — showcasing scalable backends, cloud deployments, and AI-enhanced web apps built through his BSc IT journey.",
+    url: "", // TODO: add live domain URL once deployed
     siteName: "Paul Murithi | Developer Portfolio",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Paul Murithi - Developer Portfolio",
+        alt: "Paul Murithi - Full Stack Developer & AI Integrator",
       },
     ],
     locale: "en_US",
@@ -59,9 +60,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Paul murithi | AI Developer Portfolio",
+    title: "Paul Murithi |  Full-Stack + Cloud + AI Integration",
     description:
-      "A semester-driven journey in AI, backend systems, and full-stack development. Follow along as I build and grow.",
+      "Building modern web systems and AI-powered solutions — follow Paul’s journey from BSc IT student to cloud-ready software engineer.",
     creator: "@__the__bird__",
     images: ["/og-image.jpg"],
   },

@@ -48,7 +48,7 @@ const HeroProfileSection = () => {
             Hey, I&apos;m Paul Murithi
           </h1>
           <h2 className="text-lg md:text-xl text-gray-300 font-medium">
-            BSc IT Student • Aspiring AI & Backend Engineer
+            BSc IT Student • Aspiring Full-Stack & AI Integration Engineer
           </h2>
           <p className="flex items-center justify-center text-gray-400 text-sm mt-2">
             <svg
@@ -67,9 +67,10 @@ const HeroProfileSection = () => {
           </p>
 
           <p className="text-gray-400 max-w-lg mx-auto leading-relaxed">
-            Passionate about building AI-powered tools and full-stack apps that
-            solve real-world problems. Currently on a 2-year journey mastering
-            AI, backend systems, and deployment at scale.
+            Passionate about building modern web systems and AI-enhanced tools
+            that solve real-world problems. Currently on a 3-year journey
+            mastering full-stack development, cloud deployment, and practical AI
+            integration.
           </p>
         </motion.div>
 

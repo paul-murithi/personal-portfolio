@@ -7,7 +7,7 @@ type Props = {
 };
 
 const FILTERS = [
-  { id: "semester", label: "📚 Semester Projects" },
+  { id: "semester", label: "📚 Major Projects" },
   { id: "side", label: "🔬 Side Projects" },
 ];
 

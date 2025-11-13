@@ -20,7 +20,6 @@ import {
   SiTensorflow,
 } from "react-icons/si";
 
-// Skills grouped by categories
 const skillCategories = [
   {
     category: "Programming & Foundations",
@@ -28,136 +27,158 @@ const skillCategories = [
       {
         name: "Python",
         icon: <FaPython />,
-        semester: "Sem 1",
+        semester: "Trimester 1",
         level: "Proficient",
       },
       {
         name: "Git & CLI",
         icon: <FaCode />,
-        semester: "Sem 1",
+        semester: "Trimester 1",
         level: "Proficient",
       },
       {
-        name: "NumPy",
-        icon: <SiNumpy />,
-        semester: "Sem 1",
-        level: "Intermediate",
+        name: "Data Structures & Algorithms",
+        icon: <FaBrain />,
+        semester: "Trimester 1",
+        level: "Ongoing",
       },
       {
-        name: "Matplotlib",
+        name: "Problem Solving & Debugging",
         icon: <FaBrain />,
-        semester: "Sem 1",
-        level: "Intermediate",
-      },
-      {
-        name: "DS&A + Math",
-        icon: <FaBrain />,
-        semester: "Sem 1",
+        semester: "Trimester 1",
         level: "Ongoing",
       },
     ],
   },
   {
-    category: "Data & ML",
-    skills: [
-      {
-        name: "Pandas",
-        icon: <FaDatabase />,
-        semester: "Sem 2",
-        level: "Intermediate",
-      },
-      {
-        name: "scikit-learn",
-        icon: <SiScikitlearn />,
-        semester: "Sem 2",
-        level: "Intermediate",
-      },
-      {
-        name: "SQL / Postgres",
-        icon: <SiPostgresql />,
-        semester: "Sem 2",
-        level: "Intermediate",
-      },
-      {
-        name: "Visualization (Seaborn)",
-        icon: <FaBrain />,
-        semester: "Sem 2",
-        level: "Beginner",
-      },
-    ],
-  },
-  {
-    category: "Deep Learning & AI",
-    skills: [
-      {
-        name: "PyTorch",
-        icon: <SiPytorch />,
-        semester: "Sem 3",
-        level: "Intermediate",
-      },
-      {
-        name: "CNNs / RNNs",
-        icon: <FaBrain />,
-        semester: "Sem 3",
-        level: "Beginner",
-      },
-      {
-        name: "Transformers",
-        icon: <SiTensorflow />,
-        semester: "Sem 4",
-        level: "Beginner",
-      },
-      {
-        name: "Hugging Face",
-        icon: <FaBrain />,
-        semester: "Sem 4",
-        level: "Beginner",
-      },
-    ],
-  },
-  {
-    category: "Backend & Systems",
+    category: "Backend & Databases",
     skills: [
       {
         name: "Flask",
         icon: <SiFlask />,
-        semester: "Sem 1–2",
+        semester: "Trimester 1–2",
         level: "Intermediate",
       },
       {
         name: "FastAPI",
         icon: <SiFastapi />,
-        semester: "Sem 3",
+        semester: "Trimester 2",
         level: "Intermediate",
       },
       {
-        name: "Docker",
-        icon: <SiDocker />,
-        semester: "Sem 3",
-        level: "Beginner",
+        name: "SQL / PostgreSQL",
+        icon: <SiPostgresql />,
+        semester: "Trimester 2",
+        level: "Intermediate",
       },
       {
-        name: "Redis",
+        name: "Authentication & JWT",
         icon: <FaServer />,
-        semester: "Sem 3",
-        level: "Beginner",
-      },
-      {
-        name: "System Design",
-        icon: <FaServer />,
-        semester: "Sem 4",
+        semester: "Trimester 2",
         level: "Beginner",
       },
     ],
   },
   {
-    category: "DevOps & Deployment",
+    category: "Cloud & DevOps",
     skills: [
-      { name: "CI/CD", icon: <FaCode />, semester: "Sem 5", level: "Planned" },
       {
-        name: "Monitoring",
+        name: "Docker",
+        icon: <SiDocker />,
+        semester: "Trimester 3",
+        level: "Intermediate",
+      },
+      {
+        name: "CI/CD (GitHub Actions)",
+        icon: <FaCode />,
+        semester: "Trimester 3",
+        level: "Ongoing",
+      },
+      {
+        name: "Redis / Caching",
         icon: <FaServer />,
-        semester: "Sem 6",
+        semester: "Trimester 3",
+        level: "Beginner",
+      },
+      {
+        name: "Cloud Deployment (AWS / Render)",
+        icon: <FaServer />,
+        semester: "Trimester 3",
+        level: "Ongoing",
+      },
+    ],
+  },
+  {
+    category: "AI & Integrations",
+    skills: [
+      {
+        name: "scikit-learn",
+        icon: <SiScikitlearn />,
+        semester: "Trimester 3",
+        level: "Intermediate",
+      },
+      {
+        name: "OpenAI API / GPT",
+        icon: <FaBrain />,
+        semester: "Trimester 4",
+        level: "Planned",
+      },
+      {
+        name: "Hugging Face Models",
+        icon: <FaBrain />,
+        semester: "Trimester 4",
+        level: "Planned",
+      },
+      {
+        name: "LangChain & Prompt Engineering",
+        icon: <FaBrain />,
+        semester: "Trimester 4",
+        level: "Planned",
+      },
+    ],
+  },
+  {
+    category: "Frontend & Collaboration",
+    skills: [
+      {
+        name: "React",
+        icon: <FaCode />,
+        semester: "Trimester 5",
+        level: "Planned",
+      },
+      {
+        name: "Tailwind CSS",
+        icon: <FaCode />,
+        semester: "Trimester 5",
+        level: "Planned",
+      },
+      {
+        name: "Open Source & Team Workflow",
+        icon: <FaServer />,
+        semester: "Trimester 5",
+        level: "Planned",
+      },
+    ],
+  },
+  {
+    category: "System Design & Professional Practice",
+    skills: [
+      {
+        name: "System Design",
+        icon: <FaServer />,
+        semester: "Trimester 6",
+        level: "Planned",
+      },
+      {
+        name: "Monitoring & Analytics",
+        icon: <FaServer />,
+        semester: "Trimester 6",
+        level: "Planned",
+      },
+      {
+        name: "Portfolio & Deployment Strategy",
+        icon: <FaCode />,
+        semester: "Trimester 6",
         level: "Planned",
       },
     ],
@@ -167,16 +188,15 @@ const skillCategories = [
 // Flatten skills for "All" tab
 const allSkills = skillCategories.flatMap((cat) => cat.skills);
 
-// Pick core highlights for compact view
 const highlightSkills = [
   "Python",
-  "Pandas",
-  "scikit-learn",
-  "PyTorch",
   "FastAPI",
   "Docker",
-  "Transformers",
+  "PostgreSQL",
+  "OpenAI API / GPT",
+  "React",
   "System Design",
+  "CI/CD (GitHub Actions)",
 ];
 
 const SkillsTabs = () => {

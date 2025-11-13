@@ -4,12 +4,16 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const semesters = [
-  { id: 1, label: "Semester 1", theme: "Foundations of AI" },
-  { id: 2, label: "Semester 2", theme: "Data & ML Basics" },
-  { id: 3, label: "Semester 3", theme: "Deep Learning & APIs" },
-  { id: 4, label: "Semester 4", theme: "AI Systems & Cloud" },
-  { id: 5, label: "Semester 5", theme: "LLMs & Projects" },
-  { id: 6, label: "Semester 6", theme: "Capstone & Internships" },
+  { id: 1, label: "Trimester 1", theme: "Programming & Web Foundations" },
+  { id: 2, label: "Trimester 2", theme: "Backend, Databases & Deployment" },
+  { id: 3, label: "Trimester 3", theme: "Cloud, Containers & Light ML" },
+  { id: 4, label: "Trimester 4", theme: "AI Integration & LLM Systems" },
+  {
+    id: 5,
+    label: "Trimester 5",
+    theme: "Collaboration & Multi-Modal Projects",
+  },
+  { id: 6, label: "Trimester 6", theme: "Capstone, Portfolio & Career Launch" },
 ];
 
 // TODO: Update this each trimester

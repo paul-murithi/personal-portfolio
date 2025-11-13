@@ -4,43 +4,59 @@ import { motion } from "framer-motion";
 
 const journeyYears = [
   {
-    title: "Year 1 — Foundations & Machine Learning",
+    title: "Year 1 — Core Foundations & Backend Development",
     period: "Sep 2025 – Apr 2026",
     summary:
-      "Built a strong foundation in programming, math, and data handling while delivering my first ML-powered apps.",
-    projects: [
-      "Smart Campus Assistant",
-      "Student Dropout Predictor",
-      "Kenyan Market Trends Dashboard",
+      "Building a strong foundation in Python, data structures, and web development. Progressing from coding fundamentals to creating and deploying full backend systems.",
+    projects: ["Smart Campus Assistant", "Smart Admission Portal"],
+    skills: [
+      "Python",
+      "Git",
+      "FastAPI",
+      "Flask",
+      "PostgreSQL",
+      "Render",
+      "REST APIs",
     ],
-    skills: ["Python", "Git", "Pandas", "scikit-learn", "Flask", "SQL"],
-    mantra: "Done, documented, deployed beats perfect.",
+    mantra: "Build small, deploy early, learn fast.",
   },
   {
-    title: "Year 2 — Deep Learning & Scalable Systems",
+    title: "Year 2 — Cloud Engineering & AI Integration",
     period: "May – Dec 2026",
     summary:
-      "Dived into deep learning with PyTorch, deployed scalable APIs, and began exploring LLMs & system design.",
-    projects: [
-      "Smart Recipe Recommender",
-      "AI Summarization API",
-      "News Recommender System",
+      "Focusing on containerization, CI/CD, and scalable backend design while introducing AI-driven features through practical model integration and API-based intelligence.",
+    projects: ["Smart Recommender API", "AI Resume Assistant"],
+    skills: [
+      "Docker",
+      "CI/CD",
+      "AWS",
+      "Redis",
+      "scikit-learn",
+      "OpenAI API",
+      "Hugging Face",
     ],
-    skills: ["PyTorch", "FastAPI", "Docker", "Redis", "Transformers"],
-    mantra: "Scale it, ship it, show it.",
+    mantra: "Deploy it, monitor it, make it smarter.",
   },
   {
-    title: "Year 3 — Capstone & Career Readiness",
+    title: "Year 3 — Multi-Modal Systems & Career Launch",
     period: "Jan – Aug 2027",
     summary:
-      "Focused on multi-modal AI, production-ready systems, and preparing for real-world engineering roles.",
+      "Planning to collaborate on open-source projects and build full-stack AI products that combine text, vision, and audio. Preparing to complete the capstone project and transition into real-world engineering roles.",
     projects: [
       "ScholarMatch AI",
-      "AI Resume Enhancer",
-      "Capstone: AI Career Navigator",
+      "Voice-to-Text Assistant",
+      "Personal Portfolio v2",
     ],
-    skills: ["Hugging Face", "System Design", "CI/CD", "Monitoring"],
-    mantra: "Graduate with proof!",
+    skills: [
+      "React",
+      "Tailwind",
+      "LangChain",
+      "OpenAI Whisper",
+      "System Design",
+      "CI/CD",
+      "Cloud Deployment",
+    ],
+    mantra: "Graduate with proof — not promises.",
   },
 ];
 
@@ -55,11 +71,12 @@ const JourneySnapshot = () => {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
           >
-            My Applied AI Journey
+            My Full-Stack & AI Integration Journey
           </motion.h2>
           <p className="text-gray-400 mt-2">
-            A year-by-year snapshot of my journey as a student building skills
-            toward a career in applied AI.
+            A trimester-by-trimester snapshot of my growth as a developer —
+            learning to build modern web systems, deploy to the cloud, and
+            integrate AI into real-world products.
           </p>
         </div>
 
@@ -81,9 +98,7 @@ const JourneySnapshot = () => {
               <p className="text-gray-300 text-sm mb-4">{year.summary}</p>
 
               <div className="mb-3">
-                <h4 className="text-cyan-300 font-semibold mb-1">
-                  🚀 Projects
-                </h4>
+                <h4 className="text-cyan-300 font-semibold mb-1">Projects</h4>
                 <ul className="list-disc ml-5 text-sm text-gray-300 space-y-1">
                   {year.projects.map((p) => (
                     <li key={p}>{p}</li>
