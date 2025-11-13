@@ -2,22 +2,13 @@
 "use client";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { FaPython, FaCode, FaBrain, FaServer } from "react-icons/fa";
 import {
-  FaPython,
-  FaCode,
-  FaBrain,
-  FaDatabase,
-  FaServer,
-} from "react-icons/fa";
-import {
-  SiNumpy,
   SiFlask,
   SiScikitlearn,
   SiPostgresql,
-  SiPytorch,
   SiFastapi,
   SiDocker,
-  SiTensorflow,
 } from "react-icons/si";
 
 const skillCategories = [
