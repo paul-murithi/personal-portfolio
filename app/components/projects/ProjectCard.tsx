@@ -53,17 +53,6 @@ export default function ProjectCard({ project, index, onSelect }: Props) {
                 {project.semester}
               </span>
             )}
-
-            {/*Status badge */}
-            {/* <span
-              className={`text-xs font-medium px-2 py-0.5 rounded-full ${
-                project.status === "in-progress"
-                  ? "bg-green-500/20 text-green-400 border border-green-500/30"
-                  : "bg-amber-500/20 text-amber-400 border border-amber-500/30"
-              }`}
-            >
-              {project.status === "in-progress" ? "In Progress" : "Upcoming"}
-            </span> */}
           </div>
 
           <h3 className="text-lg font-semibold mt-1 text-white line-clamp-2">

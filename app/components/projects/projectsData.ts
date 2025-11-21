@@ -104,17 +104,17 @@ export const majorProjects: ProjectType[] = [
 // Side Projects - single polished project per trimester
 export const minorProjects: ProjectType[] = [
   {
-    title: "GradeShare — Student Progress Web Tool",
+    title: "Exam Schedule Extractor",
     semester: "Trimester 1",
     description:
-      "A polished web tool for importing, visualizing, and sharing student grades with role-based access and exportable reports.",
+      "A simple Python-based tool that extracts your personal exam schedule from a timetable spreadsheet. Then displays it in a clean, readable format.",
     image: "",
-    github: "https://github.com/paul-murithi/gradeshare",
-    demo: "",
-    tags: ["Python", "Flask", "SQLite", "Auth", "Frontend"],
+    github: "https://github.com/paul-murithi/exam-timetable-extractor",
+    demo: "https://exam-timetable-extractor.streamlit.app/",
+    tags: ["Python", "Pandas", "Streamlit", "CSV"],
     details:
-      "GradeShare transforms a simple CLI script into a micro full-stack product: CSV import and validation, student/lecturer roles, grade breakdown charts, and shareable progress links. It’s an early demonstration of backend validation, front-end UX, and deployment polish — perfect as a visible first milestone of your developer journey.",
-    status: "in-progress",
+      "Exam Schedule Extractor is a lightweight project that focuses on practical data extraction and presentation. It reads a user-uploaded timetable CSV, parses exam dates and times, and displays a personalized schedule. Built with Streamlit for quick UI and Pandas for data processing, it demonstrates file handling, data parsing, and user-centric design.",
+    status: "done",
   },
   {
     title: "Kenya Data Insights Dashboard",
@@ -189,7 +189,7 @@ majorProjects.forEach((project) => {
 });
 
 minorProjects.forEach((project) => {
-  if (project.semester !== "Semester 1") {
+  if (project.semester !== "Trimester 1") {
     project.github = "";
     project.demo = "";
   }
