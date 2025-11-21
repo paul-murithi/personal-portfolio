@@ -87,6 +87,23 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-NF92KB5EL8"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-NF92KB5EL8');
+        `,
+          }}
+        />
+      </head>
+
       <body
         className={`
           ${geistSans.variable} ${geistMono.variable} 
