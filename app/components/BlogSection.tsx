@@ -28,11 +28,10 @@ const BlogSection = () => {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
           >
-            🧠 Learning Reflections
+            Learning Reflections
           </motion.h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Sharing my journey and insights as I build skills in applied AI and
-            software engineering—one semester at a time.
+            Sharing my journey, insights, and lessons learned as I grow in tech
           </p>
         </div>
 

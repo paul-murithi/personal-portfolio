@@ -18,26 +18,18 @@ const skillCategories = [
       {
         name: "Python",
         icon: <FaPython />,
-        semester: "Trimester 1",
-        level: "Proficient",
       },
       {
         name: "Git & CLI",
         icon: <FaCode />,
-        semester: "Trimester 1",
-        level: "Proficient",
       },
       {
         name: "Data Structures & Algorithms",
         icon: <FaBrain />,
-        semester: "Trimester 1",
-        level: "Ongoing",
       },
       {
         name: "Problem Solving & Debugging",
         icon: <FaBrain />,
-        semester: "Trimester 1",
-        level: "Ongoing",
       },
     ],
   },
@@ -47,26 +39,22 @@ const skillCategories = [
       {
         name: "Flask",
         icon: <SiFlask />,
-        semester: "Trimester 1–2",
-        level: "Intermediate",
       },
       {
         name: "FastAPI",
         icon: <SiFastapi />,
-        semester: "Trimester 2",
-        level: "Intermediate",
       },
       {
         name: "SQL / PostgreSQL",
         icon: <SiPostgresql />,
-        semester: "Trimester 2",
-        level: "Intermediate",
       },
       {
         name: "Authentication & JWT",
         icon: <FaServer />,
-        semester: "Trimester 2",
-        level: "Beginner",
+      },
+      {
+        name: "Express JS / Node",
+        icon: <FaServer />,
       },
     ],
   },
@@ -76,26 +64,18 @@ const skillCategories = [
       {
         name: "Docker",
         icon: <SiDocker />,
-        semester: "Trimester 3",
-        level: "Intermediate",
       },
       {
         name: "CI/CD (GitHub Actions)",
         icon: <FaCode />,
-        semester: "Trimester 3",
-        level: "Ongoing",
       },
       {
         name: "Redis / Caching",
         icon: <FaServer />,
-        semester: "Trimester 3",
-        level: "Beginner",
       },
       {
         name: "Cloud Deployment (AWS / Render)",
         icon: <FaServer />,
-        semester: "Trimester 3",
-        level: "Ongoing",
       },
     ],
   },
@@ -105,26 +85,18 @@ const skillCategories = [
       {
         name: "scikit-learn",
         icon: <SiScikitlearn />,
-        semester: "Trimester 3",
-        level: "Intermediate",
       },
       {
         name: "OpenAI API / GPT",
         icon: <FaBrain />,
-        semester: "Trimester 4",
-        level: "Planned",
       },
       {
         name: "Hugging Face Models",
         icon: <FaBrain />,
-        semester: "Trimester 4",
-        level: "Planned",
       },
       {
         name: "LangChain & Prompt Engineering",
         icon: <FaBrain />,
-        semester: "Trimester 4",
-        level: "Planned",
       },
     ],
   },
@@ -134,20 +106,14 @@ const skillCategories = [
       {
         name: "React",
         icon: <FaCode />,
-        semester: "Trimester 5",
-        level: "Planned",
       },
       {
         name: "Tailwind CSS",
         icon: <FaCode />,
-        semester: "Trimester 5",
-        level: "Planned",
       },
       {
         name: "Open Source & Team Workflow",
         icon: <FaServer />,
-        semester: "Trimester 5",
-        level: "Planned",
       },
     ],
   },
@@ -157,20 +123,14 @@ const skillCategories = [
       {
         name: "System Design",
         icon: <FaServer />,
-        semester: "Trimester 6",
-        level: "Planned",
       },
       {
         name: "Monitoring & Analytics",
         icon: <FaServer />,
-        semester: "Trimester 6",
-        level: "Planned",
       },
       {
         name: "Portfolio & Deployment Strategy",
         icon: <FaCode />,
-        semester: "Trimester 6",
-        level: "Planned",
       },
     ],
   },
@@ -214,8 +174,7 @@ const SkillsTabs = () => {
             Tech Stack Evolution
           </motion.h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Explore my growing toolkit across programming, AI, backend, and
-            deployment.
+            A dynamic showcase of my technical skills
           </p>
         </div>
 
@@ -256,10 +215,6 @@ const SkillsTabs = () => {
               >
                 <div className="text-cyan-400 text-2xl mb-2">{skill.icon}</div>
                 <p className="text-sm font-medium">{skill.name}</p>
-                <div className="flex flex-col items-center mt-1 text-xs text-gray-400">
-                  <span>{skill.semester}</span>
-                  <span className="text-cyan-300">{skill.level}</span>
-                </div>
               </div>
             ))}
           </motion.div>

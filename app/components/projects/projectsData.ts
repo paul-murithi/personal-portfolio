@@ -14,89 +14,36 @@ export type ProjectType = {
 // Trimester / Major Projects
 export const majorProjects: ProjectType[] = [
   {
-    title: "Smart Campus Assistant",
-    semester: "Trimester 1",
-    description:
-      "A full-stack web app that helps students access academic info, calculate grades, and manage schedules through a clean interactive interface.",
+    title: "Sim-Pesa",
+    description: "An Open Source Payment Gateway Simulator",
     image: "",
-    github: "https://github.com/username/smart-campus-assistant",
-    demo: "https://smart-campus-assistant.example.com",
-    tags: ["Python", "Flask", "PostgreSQL", "Auth", "Deployment"],
+    github: "",
+    demo: "",
+    tags: ["Node", "Express JS", "PostgreSQL", "Redis"],
     details:
-      "Smart Campus Assistant is the first milestone of the journey — a project that combines backend logic, REST APIs, authentication, and database CRUD in a practical product. It allows users to query academic info, manage class schedules, and calculate GPA projections. Built with Flask, PostgreSQL, and responsive design principles, the app is deployed publicly to demonstrate early full-stack competence, clean code structure, and user-focused problem solving.",
+      " A robust backend system that simulates how M-Pesa (Daraja API) handles transactions. It creates a 'fake' payment environment where developers can test their apps.",
     status: "in-progress",
   },
   {
-    title: "Smart Admission Portal",
-    semester: "Trimester 2",
-    description:
-      "A data-driven admission management system with user roles, applicant analytics, and dashboard insights for university administrators.",
+    title: "SokoFlow",
+    description: "WhatsApp-First Inventory Bot",
     image: "",
-    github: "https://github.com/username/smart-admission-portal",
-    demo: "https://smart-admission-portal.example.com",
-    tags: ["FastAPI", "PostgreSQL", "Docker", "Render", "Admin Dashboard"],
+    github: "",
+    demo: "",
+    tags: ["Twillio", "PostgreSQL", "Docker", "Render", "Admin Dashboard"],
     details:
-      "Smart Admission Portal extends backend learning into system design and deployment. It supports role-based authentication, application form submission, data validation, and analytics dashboards for admission trends. Focus areas include API versioning, Docker-based deployment, and structured logging — essential backend engineer skills. Deliverables include database schema diagrams, deployment notes, and a walkthrough video highlighting API-driven architecture.",
+      "SokoFlow is an inventory management chatbot that operates over WhatsApp. It allows small business owners to track stock levels, receive low-stock alerts, and generate sales reports through simple chat commands.",
     status: "upcoming",
   },
   {
-    title: "Smart Recommender API",
-    semester: "Trimester 3",
-    description:
-      "An API-based recommendation system that delivers personalized content (books, recipes, or learning paths) using embeddings and caching.",
+    title: "Sheria-Chatbot",
+    description: "An AI-Powered Legal Advisor Chatbot for Kenyan Law",
     image: "",
-    github: "https://github.com/username/smart-recommender-api",
-    demo: "https://smart-recommender-api.example.com",
-    tags: ["FastAPI", "Docker", "Redis", "scikit-learn", "API Integration"],
+    github: "",
+    demo: "",
+    tags: ["Vector DB", "LLM", "Redis", "Next.js"],
     details:
-      "This project introduces AI integration in a production-aware context. Users send preferences or history, and the system returns personalized recommendations powered by lightweight ML models. Redis handles caching for performance, while Docker ensures reproducible deployment. The project emphasizes cloud-readiness, scalability, and well-documented API usage — bridging backend and applied AI engineering.",
-    status: "upcoming",
-  },
-  {
-    title: "AI Resume Assistant",
-    semester: "Trimester 4",
-    description:
-      "An AI-enhanced web service that analyzes resumes and job descriptions, then suggests improvements and calculates a fit score.",
-    image: "",
-    github: "https://github.com/username/ai-resume-assistant",
-    demo: "https://ai-resume-assistant.example.com",
-    tags: ["FastAPI", "OpenAI API", "LangChain", "Docker", "CI/CD"],
-    details:
-      "AI Resume Assistant showcases real AI integration into a useful career product. Using the OpenAI API and LangChain, it compares uploaded resumes to job descriptions and generates targeted rewrite suggestions. Users receive feedback on structure, keyword gaps, and match percentage. The backend is containerized with CI/CD pipelines for auto-deployments, making it a clear demonstration of LLM-powered productivity tools.",
-    status: "upcoming",
-  },
-  {
-    title: "ScholarMatch AI",
-    semester: "Trimester 5",
-    description:
-      "A matchmaking platform that connects student profiles with scholarships and funding opportunities using explainable AI recommendations.",
-    image: "",
-    github: "https://github.com/username/scholarmatch-ai",
-    demo: "https://scholarmatch.example.com",
-    tags: ["FastAPI", "PostgreSQL", "Embeddings", "Automation", "Monitoring"],
-    details:
-      "ScholarMatch AI continues your AI-integration journey, combining embeddings-based search with automation pipelines. It aggregates scholarship listings, matches users by profile fit, and explains why each opportunity aligns. The system integrates monitoring hooks and automated updates, showcasing the transition from single-user tools to multi-user cloud products — a portfolio-ready demonstration of both backend scalability and applied AI reasoning.",
-    status: "upcoming",
-  },
-  {
-    title: "Capstone — Career Launch Hub",
-    semester: "Trimester 6",
-    description:
-      "A production-ready platform combining profile-based recommendations, learning roadmap generation, and interview preparation tools.",
-    image: "",
-    github: "https://github.com/username/career-launch-hub",
-    demo: "https://career-launch-hub.example.com",
-    tags: [
-      "Full-Stack",
-      "FastAPI",
-      "React",
-      "LangChain",
-      "PostgreSQL",
-      "CI/CD",
-      "Cloud Deployment",
-    ],
-    details:
-      "The Career Launch Hub serves as the grand finale — a full-stack capstone integrating backend APIs, frontend UI, and AI-driven recommendations. It helps users map their skills to career paths, suggests learning tracks, and generates practice interview questions. It’s built with FastAPI, React, and PostgreSQL, containerized for scalable deployment. Deliverables include documentation, CI/CD workflows, a live demo, and analytics dashboards — evidence of end-to-end engineering maturity and readiness for professional work.",
+      "A localized RAG (Retrieval Augmented Generation) system that answers legal questions using the Kenyan Constitution and Traffic Act as the source of truth",
     status: "upcoming",
   },
 ];
@@ -105,7 +52,6 @@ export const majorProjects: ProjectType[] = [
 export const minorProjects: ProjectType[] = [
   {
     title: "Exam Schedule Extractor",
-    semester: "Trimester 1",
     description:
       "A simple Python-based tool that extracts your personal exam schedule from a timetable spreadsheet. Then displays it in a clean, readable format.",
     image: "",
@@ -117,80 +63,39 @@ export const minorProjects: ProjectType[] = [
     status: "done",
   },
   {
-    title: "Kenya Data Insights Dashboard",
-    semester: "Trimester 2",
+    title: "'Rate Limiter' Middleware",
     description:
-      "An interactive dashboard that visualizes Kenya Open Data, offering SMEs and NGOs quick insights on local economic and education trends.",
+      "A custom middleware for Sim-Pesa API that blocks users if they make more than 10 requests per minute.",
     image: "",
-    github: "https://github.com/username/kenya-data-insights",
-    demo: "https://kenya-data-insights.example.com",
+    github: "",
+    demo: "",
     tags: ["Python", "Pandas", "FastAPI", "Streamlit", "Visualization"],
     details:
-      "This mid-trimester project combines ETL, API development, and visualization. The pipeline cleans Kenyan public datasets, exposes them through a FastAPI endpoint, and visualizes insights in Streamlit. The tool demonstrates backend-to-frontend integration and local data storytelling — a great example of relevant, Kenya-focused problem-solving.",
+      "a custom middleware for your API that blocks users if they make more than 10 requests per minute.",
     status: "upcoming",
   },
   {
-    title: "Dockerized Notes API",
-    semester: "Trimester 3",
+    title: "Dockerized Cron Job Scheduler",
     description:
-      "A lightweight note-taking API deployed in Docker with authentication, caching, and logging.",
+      "A production-ready cron job scheduler with Docker deployment, logging, and alerting features.",
     image: "",
-    github: "https://github.com/username/dockerized-notes-api",
-    demo: "https://notes-api.example.com",
+    github: "",
+    demo: "",
     tags: ["FastAPI", "Docker", "Redis", "Auth", "Logging"],
     details:
-      "Dockerized Notes API showcases your growing DevOps awareness. It’s a clean, production-style backend with Redis caching, structured logs, JWT auth, and Docker Compose for deployment. The focus is performance, reproducibility, and developer experience — an ideal cloud-focused learning project.",
+      "A script that scrapes a news site every morning, summarizes it, and emails it to you.",
     status: "upcoming",
   },
   {
-    title: "LLM Micro-API — Text Summarizer",
-    semester: "Trimester 4",
+    title: '"Context-Aware Cache" Middleware',
     description:
-      "A compact FastAPI service that exposes text summarization via OpenAI API with basic rate limiting and API key auth.",
+      "A custom caching middleware that adjusts cache duration based on request context and user behavior.",
     image: "",
-    github: "https://github.com/username/llm-microapi-summarizer",
-    demo: "https://llm-microapi.example.com",
+    github: "",
+    demo: "",
     tags: ["FastAPI", "OpenAI API", "LangChain", "Auth", "Rate Limiting"],
     details:
-      "This project demonstrates safe and efficient LLM integration. It provides endpoints for summarization and paraphrasing, includes user-level rate limiting, and offers clear documentation for consumers. A short frontend demo illustrates real-world usage of AI APIs — perfect practice for Trimester 4’s AI Integration focus.",
-    status: "upcoming",
-  },
-  {
-    title: "Speech2Summary — Audio-to-Notes App",
-    semester: "Trimester 5",
-    description:
-      "A Streamlit + FastAPI tool that transcribes short audio clips into concise, actionable summaries.",
-    image: "",
-    github: "https://github.com/username/speech2summary",
-    demo: "https://speech2summary.example.com",
-    tags: ["Whisper", "FastAPI", "Streamlit", "LLM", "Multi-modal"],
-    details:
-      "Speech2Summary merges speech and text pipelines — using Whisper for transcription and OpenAI for summarization. Users can record audio, get structured notes, and export them as PDF or TXT. It’s your first hands-on multi-modal AI demo, built for usability and real-world impact.",
-    status: "upcoming",
-  },
-  {
-    title: "InterviewCoach — Job Prep Micro-SaaS",
-    semester: "Trimester 6",
-    description:
-      "A micro-SaaS web app that generates personalized interview questions and feedback based on a resume and job description.",
-    image: "",
-    github: "https://github.com/username/interviewcoach",
-    demo: "https://interviewcoach.example.com",
-    tags: ["FastAPI", "LLM", "React", "PWA", "Auth"],
-    details:
-      "InterviewCoach helps users prepare for interviews using AI-driven insights. It generates custom question sets, provides model answers, and exports study guides as PDFs. It simulates a subscription SaaS workflow — ideal for demonstrating user experience design, AI feature packaging, and business-oriented coding in your final trimester.",
+      "An API that caches heavy AI responses in Redis, but invalidates the cache if the underlying data changes.",
     status: "upcoming",
   },
 ];
-
-majorProjects.forEach((project) => {
-  project.github = "";
-  project.demo = "";
-});
-
-minorProjects.forEach((project) => {
-  if (project.semester !== "Trimester 1") {
-    project.github = "";
-    project.demo = "";
-  }
-});

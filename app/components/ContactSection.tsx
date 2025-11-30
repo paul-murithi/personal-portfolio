@@ -24,9 +24,8 @@ const ContactSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          I’m always open to internships, collaborations, and exciting AI /
-          backend projects. If you’d like to connect, feel free to drop me a
-          message!
+          I’m always open to internships, collaborations, and exciting tech
+          projects. If you’d like to connect, feel free to drop me a message!
         </motion.p>
 
         {/* CTA Button */}

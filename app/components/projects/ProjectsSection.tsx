@@ -36,11 +36,10 @@ export default function ProjectsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            🧩 Featured Projects
+            Featured Projects
           </motion.h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Explore my journey through academic semesters and personal builds —
-            from foundational tools to full-stack AI projects.
+            A curated selection of my main and side projects
           </p>
         </div>
 
