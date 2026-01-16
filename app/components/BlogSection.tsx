@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import { url } from "inspector";
 import { FaExternalLinkAlt } from "react-icons/fa";
 
 const posts = [
@@ -11,6 +12,14 @@ const posts = [
       "A beginner-friendly journey into Flask web development, covering setup, routing, templates, and deployment.",
     url: "https://from-zero-to-flask.hashnode.dev/getting-started-with-flask-a-beginners-web-development-journey",
     tags: ["Python", "Roadmap", "Foundations"],
+  },
+  {
+    title: "Beyond docker-compose up: Building a 5-Service Local Appliance",
+    date: "Jan 16, 2026",
+    semester: "Semester 2",
+    summary: "My First dockerized multi-service local appliance for Simpesa.",
+    url: "https://building-a-5-service-local-appliance.hashnode.dev/building-simpesa-5-service-docker-appliance",
+    tags: ["Redis", "PostgreSQL", "Docker", "Backend", "Typescript"],
   },
 ];
 
