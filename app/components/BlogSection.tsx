@@ -1,6 +1,5 @@
 "use client";
 import { motion } from "framer-motion";
-import { url } from "inspector";
 import { FaExternalLinkAlt } from "react-icons/fa";
 
 const posts = [
