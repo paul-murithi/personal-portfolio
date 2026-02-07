@@ -171,7 +171,7 @@ const SkillsTabs = () => {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
           >
-            Tech Stack Evolution
+            Tech Stack & Skills
           </motion.h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
             A dynamic showcase of my technical skills

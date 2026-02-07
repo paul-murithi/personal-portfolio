@@ -16,7 +16,7 @@ import { motion } from "framer-motion";
 
 const HeroProfileSection = () => {
   return (
-    <section className="relative w-full py-16 px-6 bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950 text-white overflow-hidden">
+    <section className="relative w-full py-16 px-6 bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950 text-white overflow-hidden h-screen flex items-center justify-center">
       {/* Background glow */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(56,189,248,0.15),transparent_70%)]" />
 
