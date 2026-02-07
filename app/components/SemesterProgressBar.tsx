@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 
 const semesters = [
   { id: 1, label: "Trimester 1", theme: "Programming & Web Foundations" },
