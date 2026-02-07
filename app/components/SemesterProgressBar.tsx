@@ -2,25 +2,20 @@
 
 import React from "react";
 
-const semesters = [
-  { id: 1, label: "Trimester 1", theme: "Programming & Web Foundations" },
-  { id: 2, label: "Trimester 2", theme: "Backend, Databases & Deployment" },
-  { id: 3, label: "Trimester 3", theme: "Cloud, Containers & Light ML" },
-  { id: 4, label: "Trimester 4", theme: "AI Integration & LLM Systems" },
-  {
-    id: 5,
-    label: "Trimester 5",
-    theme: "Collaboration & Multi-Modal Projects",
-  },
-  { id: 6, label: "Trimester 6", theme: "Capstone, Portfolio & Career Launch" },
-];
-
-// TODO: Update this each trimester
-const currentSemester = 1;
+// const semesters = [
+//   { id: 1, label: "Trimester 1", theme: "Programming & Web Foundations" },
+//   { id: 2, label: "Trimester 2", theme: "Backend, Databases & Deployment" },
+//   { id: 3, label: "Trimester 3", theme: "Cloud, Containers & Light ML" },
+//   { id: 4, label: "Trimester 4", theme: "AI Integration & LLM Systems" },
+//   {
+//     id: 5,
+//     label: "Trimester 5",
+//     theme: "Collaboration & Multi-Modal Projects",
+//   },
+//   { id: 6, label: "Trimester 6", theme: "Capstone, Portfolio & Career Launch" },
+// ];
 
 const SemesterProgressBar = () => {
-  const progressPercent = (currentSemester / semesters.length) * 100;
-
   return (
     <section className="w-full py-12 px-6 bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950 text-white">
       <div className="max-w-6xl mx-auto">
