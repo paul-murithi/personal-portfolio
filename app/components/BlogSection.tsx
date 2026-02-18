@@ -41,7 +41,8 @@ const posts = [
   {
     title: "The Art of Trace",
     date: "Feb 13, 2026",
-    summary: "How I added logging and visibility to SimPesa",
+    summary:
+      "Journey into distributed tracing and observability with tools, techniques, and best practices.",
     url: "https://the-art-of-trace.hashnode.dev/",
     tags: ["Distributed Systems", "Observability", "Tracing"],
   },
@@ -49,7 +50,7 @@ const posts = [
     title: "The Transactional state machine",
     date: "Feb 20, 2026",
     summary:
-      "Designing for deterministic state transitions in a distributed system",
+      "Designing deterministic state transitions in a distributed system",
     url: "https://week-5-the-transactional-state-machine.hashnode.dev/",
     tags: ["Backend", "Typescript", "State Machine"],
   },
@@ -135,7 +136,7 @@ const BlogSection = () => {
           <div
             ref={scrollContainerRef}
             onScroll={checkScrollability}
-            className="flex gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-4"
+            className="flex gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-4 items-stretch"
             style={{
               scrollbarWidth: "none",
               msOverflowStyle: "none",
@@ -147,7 +148,7 @@ const BlogSection = () => {
                 href={post.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-shrink-0 w-[90%] sm:w-[45%] lg:w-[32%] snap-start bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 hover:border-cyan-400/30 hover:shadow-lg hover:shadow-cyan-500/10 transition-all duration-300"
+                className="flex flex-col flex-shrink-0 w-[90%] sm:w-[45%] lg:w-[32%] snap-start bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 hover:border-cyan-400/30 hover:shadow-lg hover:shadow-cyan-500/10 transition-all duration-300"
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ delay: i * 0.1 }}
@@ -157,15 +158,16 @@ const BlogSection = () => {
                   <span className="text-xs text-gray-500">{post.date}</span>
                 </div>
 
-                <h3 className="text-lg font-semibold text-white mb-2">
+                <h3 className="text-lg font-semibold text-white mb-2 line-clamp-2 min-h-[3.5rem]">
                   {post.title}
                 </h3>
-                <p className="text-sm text-gray-400 leading-relaxed mb-3">
+
+                <p className="text-sm text-gray-400 leading-relaxed mb-4 line-clamp-3">
                   {post.summary}
                 </p>
 
-                {/* Tags */}
-                <div className="flex flex-wrap gap-2 mb-3">
+                {/* Tags Wrapper */}
+                <div className="flex flex-wrap gap-2 mb-6">
                   {post.tags.map((tag) => (
                     <span
                       key={tag}
@@ -176,7 +178,7 @@ const BlogSection = () => {
                   ))}
                 </div>
 
-                <div className="flex items-center space-x-2 text-cyan-400 text-sm">
+                <div className="mt-auto flex items-center space-x-2 text-cyan-400 text-sm pt-2">
                   <FaExternalLinkAlt size={12} />
                   <span>Read More</span>
                 </div>
