@@ -38,6 +38,21 @@ const posts = [
     url: "https://week-3-the-ingestion-layer.hashnode.dev/week-3-building-the-core-api-endpoint",
     tags: ["Redis", "Backend", "Typescript", "BullMQ"],
   },
+  {
+    title: "The Art of Trace",
+    date: "Feb 13, 2026",
+    summary: "How I added logging and visibility to SimPesa",
+    url: "https://the-art-of-trace.hashnode.dev/",
+    tags: ["Distributed Systems", "Observability", "Tracing"],
+  },
+  {
+    title: "The Transactional state machine",
+    date: "Feb 20, 2026",
+    summary:
+      "Designing for deterministic state transitions in a distributed system",
+    url: "https://week-5-the-transactional-state-machine.hashnode.dev/",
+    tags: ["Backend", "Typescript", "State Machine"],
+  },
 ];
 
 const BlogSection = () => {
