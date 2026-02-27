@@ -54,6 +54,14 @@ const posts = [
     url: "https://week-5-the-transactional-state-machine.hashnode.dev/",
     tags: ["Backend", "Typescript", "State Machine"],
   },
+  {
+    title: "Building a Financial Vault: Row-Level Locking",
+    date: "February 25, 2026",
+    summary:
+      "Learn how I used PostgreSQL's SELECT ... FOR UPDATE to handle concurrent payments, prevent double-spending, and survive a simulated race condition where two transactions hit the same account simultaneously",
+    url: "https://week-6-financial-vault.hashnode.dev/building-a-financial-vault-row-level-locking-and-the-two-lock-dance",
+    tags: ["PostgreSQL", "Backend", "Security", "Concurrency"],
+  },
 ];
 
 const BlogSection = () => {
