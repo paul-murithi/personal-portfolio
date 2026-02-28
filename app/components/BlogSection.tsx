@@ -59,7 +59,7 @@ const posts = [
     date: "February 25, 2026",
     summary:
       "Learn how I used PostgreSQL's SELECT ... FOR UPDATE to handle concurrent payments, prevent double-spending, and survive a simulated race condition where two transactions hit the same account simultaneously",
-    url: "https://week-6-financial-vault.hashnode.dev/building-a-financial-vault-row-level-locking-and-the-two-lock-dance",
+    url: "https://simpesa.hashnode.dev/building-a-financial-vault-row-level-locking-and-the-two-lock-dance",
     tags: ["PostgreSQL", "Backend", "Security", "Concurrency"],
   },
 ];
@@ -200,11 +200,10 @@ const BlogSection = () => {
           {posts.map((_, index) => (
             <div
               key={index}
-              className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-                index === activeIndex
+              className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${index === activeIndex
                   ? "bg-cyan-400 w-8"
                   : "bg-cyan-400/30 hover:bg-cyan-400/50"
-              }`}
+                }`}
             />
           ))}
         </div>
