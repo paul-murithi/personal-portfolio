@@ -6,9 +6,9 @@ import ScrollProgressBar from "./ScrollProgressBar";
 
 const sections = [
   { id: "home", label: "Home" },
-  { id: "roadmap", label: "Roadmap" },
-  { id: "projects", label: "Projects" },
   { id: "skills", label: "Skills" },
+  { id: "projects", label: "Projects" },
+  { id: "blog", label: "Blogs" },
   { id: "contact", label: "Contact" },
 ];
 
@@ -40,7 +40,7 @@ const Navbar = () => {
         root: null,
         rootMargin: "0px 0px -50% 0px",
         threshold: 0.3,
-      }
+      },
     );
 
     sectionElements.forEach((el) => {

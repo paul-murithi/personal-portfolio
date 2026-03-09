@@ -2,18 +2,6 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-// const currentSemester = {
-//   title: "Semester 1 — Foundations of AI",
-//   duration: "Sep – Dec 2025",
-//   focus: "Building strong Python & DSA foundations for AI",
-//   goals: [
-//     "Fluent in Python",
-//     "3 Mini Projects + 1 Smart Campus Assistant",
-//     "Launch GitHub Portfolio",
-//   ],
-//   mantra: "Done, documented, deployed beats perfect.",
-// };
-
 const HeroProfileSection = () => {
   return (
     <section className="relative w-full py-16 px-6 bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950 text-white overflow-hidden h-screen flex items-center justify-center">
@@ -48,7 +36,7 @@ const HeroProfileSection = () => {
             Hey, I&apos;m Paul Murithi
           </h1>
           <h2 className="text-lg md:text-xl text-gray-300 font-medium">
-            BSc IT Student • Aspiring Full-Stack & AI Integration Engineer
+            Backend Developer focused on FinTech & Distributed Systems
           </h2>
           <p className="flex items-center justify-center text-gray-400 text-sm mt-2">
             <svg
@@ -63,42 +51,16 @@ const HeroProfileSection = () => {
               <path d="M21 10c0 6-9 11-9 11S3 16 3 10a9 9 0 1118 0z" />
               <circle cx="12" cy="10" r="3" fill="currentColor" />
             </svg>
-            Mount Kenya University, Meru, kenya
+            Mount Kenya University, Meru, Kenya
           </p>
 
           <p className="text-gray-400 max-w-lg mx-auto leading-relaxed">
-            Passionate about building modern web systems and AI-enhanced tools
-            that solve real-world problems. Currently on a 3-year journey
-            mastering full-stack development, cloud deployment, and practical AI
-            integration.
+            IT tudent building production-style systems. <br />
+            Currently exploring how real software handles transactions,
+            failures, concurrency, and scale, with a growing focus on FinTech
+            infrastructure and distributed backend systems.
           </p>
         </motion.div>
-
-        {/* TODO: I will add later */}
-        {/* Semester Card */}
-        {/* <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5 }}
-          className="w-full max-w-xl bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 text-left shadow-lg hover:shadow-cyan-500/10 transition-all duration-300"
-        >
-          <h3 className="text-cyan-400 font-semibold text-sm uppercase tracking-wider mb-2">
-            {currentSemester.title}
-          </h3>
-          <p className="text-sm text-gray-400 mb-4 italic">
-            {currentSemester.focus} ({currentSemester.duration})
-          </p>
-
-          <ul className="list-disc ml-5 space-y-1 text-sm text-gray-300">
-            {currentSemester.goals.map((goal) => (
-              <li key={goal}>{goal}</li>
-            ))}
-          </ul>
-
-          <p className="text-sm text-gray-400 italic mt-4 border-t border-gray-800 pt-3">
-            <span className="text-cyan-400">{currentSemester.mantra}</span>
-          </p>
-        </motion.div> */}
 
         {/* Contact & Social */}
         <motion.div
@@ -108,7 +70,7 @@ const HeroProfileSection = () => {
           className="flex flex-col sm:flex-row sm:space-x-6 items-center justify-center gap-4 pt-4"
         >
           <a
-            href="mailto:paulmurithi518@gmail.com"
+            href="mailto:murithikirerapaul@gmail.com"
             className="flex items-center text-sm text-gray-400 hover:text-cyan-400 transition"
           >
             <svg
@@ -120,7 +82,7 @@ const HeroProfileSection = () => {
             >
               <path d="M3 8l9 6 9-6M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
             </svg>
-            paulmurithi518@gmail.com
+            Email
           </a>
 
           <a

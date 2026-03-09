@@ -10,6 +10,7 @@ import {
   SiFastapi,
   SiDocker,
 } from "react-icons/si";
+import { PageHeading } from "./PageHeading";
 
 const skillCategories = [
   {
@@ -165,18 +166,7 @@ const SkillsTabs = () => {
     <section className="py-16 px-6 bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950 text-white">
       <div className="max-w-6xl mx-auto space-y-12">
         {/* Header */}
-        <div className="text-center space-y-3">
-          <motion.h2
-            className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent"
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-          >
-            Tech Stack & Skills
-          </motion.h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            A dynamic showcase of my technical skills
-          </p>
-        </div>
+        <PageHeading heading="Tech Stack & Skills" />
 
         {/* Tabs */}
         <div className="flex flex-wrap justify-center gap-3">

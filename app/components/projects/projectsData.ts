@@ -30,9 +30,9 @@ export const majorProjects: ProjectType[] = [
     image: "",
     github: "",
     demo: "",
-    tags: ["Twillio", "PostgreSQL", "Docker", "Render", "Admin Dashboard"],
+    tags: ["Twillio", "PostgreSQL", "Docker", "Fast API"],
     details:
-      "SokoFlow is an inventory management chatbot that operates over WhatsApp. It allows small business owners to track stock levels, receive low-stock alerts, and generate sales reports through simple chat commands.",
+      "An inventory management chatbot that operates over WhatsApp. It allows small business owners to track stock levels, receive low-stock alerts, and generate sales reports through simple chat commands.",
     status: "upcoming",
   },
   {

@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope, FaTwitter } from "react-icons/fa";
 
 const ContactSection = () => {
   return (
@@ -35,7 +35,7 @@ const ContactSection = () => {
           transition={{ duration: 1 }}
         >
           <a
-            href="mailto:paulmurithi518@gmail.com"
+            href="mailto:murithikirerapaul@gmail.com"
             className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-medium shadow-lg hover:shadow-cyan-500/30 hover:scale-105 transition transform"
           >
             📩 Email Me
@@ -66,10 +66,12 @@ const ContactSection = () => {
             <FaLinkedin size={22} />
           </a>
           <a
-            href="mailto:paulmurithi518@gmail.com"
+            href="https://github.com/paul-murithi"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-gray-400 hover:text-cyan-400 transition"
           >
-            <FaEnvelope size={22} />
+            <FaTwitter size={22} />
           </a>
         </motion.div>
       </div>

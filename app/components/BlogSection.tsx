@@ -6,27 +6,27 @@ import {
   FaChevronRight,
 } from "react-icons/fa";
 import { useState, useRef } from "react";
+import { PageHeading } from "./PageHeading";
 
 const posts = [
   {
-    title: "From Zero to Flask: My Web Dev Kickoff",
+    title: "From Zero to Flask",
     date: "Oct 20, 2025",
-    summary:
-      "A beginner-friendly journey into Flask web development, covering setup, routing, templates, and deployment.",
+    summary: "My journey into Flask web development basics and deployment.",
     url: "https://from-zero-to-flask.hashnode.dev/getting-started-with-flask-a-beginners-web-development-journey",
     tags: ["Python", "Roadmap", "Foundations"],
   },
   {
-    title: "Beyond docker-compose up: Building a 5-Service Local Appliance",
+    title: "Building a 5-Service Local Appliance",
     date: "Jan 16, 2026",
-    summary: "My First dockerized multi-service local appliance for Simpesa.",
+    summary: "My first dockerized multi-service local appliance for Simpesa.",
     url: "https://building-a-5-service-local-appliance.hashnode.dev/building-simpesa-5-service-docker-appliance",
-    tags: ["Redis", "PostgreSQL", "Docker", "Backend", "Typescript"],
+    tags: ["Redis", "PostgreSQL", "Docker", "Typescript"],
   },
   {
     title: "Building a Production Migration System",
     date: "Jan 31, 2026",
-    summary: "How I developed a Production Migration System Without an ORM",
+    summary: "Developing a production migration system without an ORM.",
     url: "https://building-a-production-migration-system.hashnode.dev/week-2-building-a-production-migration-system",
     tags: ["PostgreSQL", "Backend", "Typescript"],
   },
@@ -34,15 +34,14 @@ const posts = [
     title: "Building the Core SimPesa's API endpoint",
     date: "Feb 4, 2026",
     summary:
-      "How I engineered a resilient ingestion engine for an M-Pesa simulator",
+      "Engineering a resilient ingestion engine for an M-Pesa simulator.",
     url: "https://week-3-the-ingestion-layer.hashnode.dev/week-3-building-the-core-api-endpoint",
     tags: ["Redis", "Backend", "Typescript", "BullMQ"],
   },
   {
     title: "The Art of Trace",
     date: "Feb 13, 2026",
-    summary:
-      "Journey into distributed tracing and observability with tools, techniques, and best practices.",
+    summary: "Exploring distributed tracing and observability tools.",
     url: "https://the-art-of-trace.hashnode.dev/",
     tags: ["Distributed Systems", "Observability", "Tracing"],
   },
@@ -50,7 +49,7 @@ const posts = [
     title: "The Transactional state machine",
     date: "Feb 20, 2026",
     summary:
-      "Designing deterministic state transitions in a distributed system",
+      "Designing deterministic state transitions in distributed systems.",
     url: "https://week-5-the-transactional-state-machine.hashnode.dev/",
     tags: ["Backend", "Typescript", "State Machine"],
   },
@@ -58,7 +57,7 @@ const posts = [
     title: "Building a Financial Vault: Row-Level Locking",
     date: "February 25, 2026",
     summary:
-      "Learn how I used PostgreSQL's SELECT ... FOR UPDATE to handle concurrent payments, prevent double-spending, and survive a simulated race condition where two transactions hit the same account simultaneously",
+      "Using PostgreSQL row-level locking to handle concurrent payments safely.",
     url: "https://simpesa.hashnode.dev/building-a-financial-vault-row-level-locking-and-the-two-lock-dance",
     tags: ["PostgreSQL", "Backend", "Security", "Concurrency"],
   },
@@ -103,18 +102,7 @@ const BlogSection = () => {
     >
       <div className="max-w-7xl mx-auto space-y-8">
         {/* Header */}
-        <div className="text-center space-y-3">
-          <motion.h2
-            className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent"
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-          >
-            Learning Reflections
-          </motion.h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            Sharing my journey, insights, and lessons learned as I grow in tech
-          </p>
-        </div>
+        <PageHeading heading=" Learning Reflections" />
 
         {/* Slider Container */}
         <div className="relative group">
@@ -200,10 +188,11 @@ const BlogSection = () => {
           {posts.map((_, index) => (
             <div
               key={index}
-              className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${index === activeIndex
+              className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                index === activeIndex
                   ? "bg-cyan-400 w-8"
                   : "bg-cyan-400/30 hover:bg-cyan-400/50"
-                }`}
+              }`}
             />
           ))}
         </div>

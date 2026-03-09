@@ -5,6 +5,7 @@ import ProjectsFilter from "./ProjectsFilter";
 import ProjectCard from "./ProjectCard";
 import ProjectModal from "./ProjectModal";
 import { majorProjects, minorProjects, ProjectType } from "./projectsData";
+import { PageHeading } from "../PageHeading";
 
 /**
  * ProjectsSection — main controller of the projects section
@@ -12,7 +13,7 @@ import { majorProjects, minorProjects, ProjectType } from "./projectsData";
  */
 export default function ProjectsSection() {
   const [activeFilter, setActiveFilter] = useState<"semester" | "side">(
-    "semester"
+    "semester",
   );
   const [selected, setSelected] = useState<ProjectType | null>(null);
 
@@ -29,19 +30,7 @@ export default function ProjectsSection() {
 
       <div className="relative max-w-6xl mx-auto space-y-12">
         {/* Header */}
-        <div className="text-center space-y-3">
-          <motion.h2
-            className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent"
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            Featured Projects
-          </motion.h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            A curated selection of my main and side projects
-          </p>
-        </div>
+        <PageHeading heading="Featured Projects" />
 
         {/* Filter */}
         <ProjectsFilter active={activeFilter} onChange={setActiveFilter} />
