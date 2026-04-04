@@ -1,98 +1,51 @@
 "use client";
-import { motion } from "framer-motion";
-import {
-  FaExternalLinkAlt,
-  FaChevronLeft,
-  FaChevronRight,
-} from "react-icons/fa";
-import { useState, useRef } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { FaChevronDown, FaChevronUp, FaExternalLinkAlt } from "react-icons/fa";
+import { useState } from "react";
 import { PageHeading } from "./PageHeading";
+import { projects, QUARTER_LABELS } from "../utils/blog-projects";
 
-const posts = [
-  {
-    title: "From Zero to Flask",
-    date: "Oct 20, 2025",
-    summary: "My journey into Flask web development basics and deployment.",
-    url: "https://from-zero-to-flask.hashnode.dev/getting-started-with-flask-a-beginners-web-development-journey",
-    tags: ["Python", "Roadmap", "Foundations"],
-  },
-  {
-    title: "Building a 5-Service Local Appliance",
-    date: "Jan 16, 2026",
-    summary: "My first dockerized multi-service local appliance for Simpesa.",
-    url: "https://building-a-5-service-local-appliance.hashnode.dev/building-simpesa-5-service-docker-appliance",
-    tags: ["Redis", "PostgreSQL", "Docker", "Typescript"],
-  },
-  {
-    title: "Building a Production Migration System",
-    date: "Jan 31, 2026",
-    summary: "Developing a production migration system without an ORM.",
-    url: "https://building-a-production-migration-system.hashnode.dev/week-2-building-a-production-migration-system",
-    tags: ["PostgreSQL", "Backend", "Typescript"],
-  },
-  {
-    title: "Building the Core SimPesa's API endpoint",
-    date: "Feb 4, 2026",
-    summary:
-      "Engineering a resilient ingestion engine for an M-Pesa simulator.",
-    url: "https://week-3-the-ingestion-layer.hashnode.dev/week-3-building-the-core-api-endpoint",
-    tags: ["Redis", "Backend", "Typescript", "BullMQ"],
-  },
-  {
-    title: "The Art of Trace",
-    date: "Feb 13, 2026",
-    summary: "Exploring distributed tracing and observability tools.",
-    url: "https://the-art-of-trace.hashnode.dev/",
-    tags: ["Distributed Systems", "Observability", "Tracing"],
-  },
-  {
-    title: "The Transactional state machine",
-    date: "Feb 20, 2026",
-    summary:
-      "Designing deterministic state transitions in distributed systems.",
-    url: "https://week-5-the-transactional-state-machine.hashnode.dev/",
-    tags: ["Backend", "Typescript", "State Machine"],
-  },
-  {
-    title: "Building a Financial Vault: Row-Level Locking",
-    date: "February 25, 2026",
-    summary:
-      "Using PostgreSQL row-level locking to handle concurrent payments safely.",
-    url: "https://simpesa.hashnode.dev/building-a-financial-vault-row-level-locking-and-the-two-lock-dance",
-    tags: ["PostgreSQL", "Backend", "Security", "Concurrency"],
-  },
-];
+const DEFAULT_VISIBLE = 6;
 
 const BlogSection = () => {
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const [canScrollLeft, setCanScrollLeft] = useState(false);
-  const [canScrollRight, setCanScrollRight] = useState(true);
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeProject, setActiveProject] = useState(0);
+  const [activeQuarter, setActiveQuarter] = useState<number | "all">("all");
+  const [expanded, setExpanded] = useState(false);
 
-  const checkScrollability = () => {
-    if (scrollContainerRef.current) {
-      const { scrollLeft, scrollWidth, clientWidth } =
-        scrollContainerRef.current;
-      setCanScrollLeft(scrollLeft > 0);
-      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10);
+  const project = projects[activeProject];
 
-      const cardWidth =
-        scrollContainerRef.current.querySelector("a")?.clientWidth || 0;
-      const gap = 24;
-      const index = Math.round(scrollLeft / (cardWidth + gap));
-      setActiveIndex(Math.min(index, posts.length - 1));
-    }
+  const visibleQuarters = [0, 1, 2, 3].filter((q) =>
+    project.posts.some((p) => p.week >= q * 4 + 1 && p.week <= q * 4 + 4),
+  );
+
+  const filteredPosts =
+    activeQuarter === "all"
+      ? project.posts
+      : project.posts.filter(
+          (p) =>
+            p.week >= (activeQuarter as number) * 4 + 1 &&
+            p.week <= (activeQuarter as number) * 4 + 4,
+        );
+
+  const displayedPosts = expanded
+    ? filteredPosts
+    : filteredPosts.slice(0, DEFAULT_VISIBLE);
+  const hasMore = filteredPosts.length > DEFAULT_VISIBLE;
+  const hiddenCount = filteredPosts.length - DEFAULT_VISIBLE;
+
+  const progressPct = Math.round(
+    (project.posts.length / project.totalWeeks) * 100,
+  );
+
+  const handleProjectSwitch = (i: number) => {
+    setActiveProject(i);
+    setActiveQuarter("all");
+    setExpanded(false);
   };
 
-  const scroll = (direction: "left" | "right") => {
-    if (scrollContainerRef.current) {
-      const scrollAmount = scrollContainerRef.current.clientWidth * 0.8;
-      scrollContainerRef.current.scrollBy({
-        left: direction === "left" ? -scrollAmount : scrollAmount,
-        behavior: "smooth",
-      });
-      setTimeout(checkScrollability, 300);
-    }
+  const handleQuarterSwitch = (q: number | "all") => {
+    setActiveQuarter(q);
+    setExpanded(false);
   };
 
   return (
@@ -100,111 +53,158 @@ const BlogSection = () => {
       id="blog"
       className="py-20 px-6 bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950 text-white overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto space-y-8">
-        {/* Header */}
-        <PageHeading heading=" Learning Reflections" />
+      <div className="max-w-7xl mx-auto space-y-6">
+        <PageHeading heading="Learning Reflections" />
 
-        {/* Slider Container */}
-        <div className="relative group">
-          {/* Left Arrow */}
-          {canScrollLeft && (
+        {/* Project Tabs */}
+        <div className="flex flex-wrap gap-2">
+          {projects.map((p, i) => (
             <button
-              onClick={() => scroll("left")}
-              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-cyan-500/20 hover:bg-cyan-500/30 backdrop-blur-sm border border-cyan-400/30 rounded-full p-3 transition-all duration-300 opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0"
-              aria-label="Scroll left"
+              key={p.id}
+              onClick={() => handleProjectSwitch(i)}
+              className={`flex items-center gap-2 px-4 py-1.5 rounded-full text-sm border transition-all duration-200 ${
+                i === activeProject
+                  ? "bg-white text-gray-950 border-white font-medium"
+                  : "bg-transparent text-gray-400 border-white/20 hover:border-white/40 hover:text-white"
+              }`}
             >
-              <FaChevronLeft className="text-cyan-400" size={20} />
-            </button>
-          )}
-
-          {/* Right Arrow */}
-          {canScrollRight && (
-            <button
-              onClick={() => scroll("right")}
-              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-cyan-500/20 hover:bg-cyan-500/30 backdrop-blur-sm border border-cyan-400/30 rounded-full p-3 transition-all duration-300 opacity-0 group-hover:opacity-100 translate-x-4 group-hover:translate-x-0"
-              aria-label="Scroll right"
-            >
-              <FaChevronRight className="text-cyan-400" size={20} />
-            </button>
-          )}
-
-          {/* Scrollable Posts */}
-          <div
-            ref={scrollContainerRef}
-            onScroll={checkScrollability}
-            className="flex gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-4 items-stretch"
-            style={{
-              scrollbarWidth: "none",
-              msOverflowStyle: "none",
-            }}
-          >
-            {posts.map((post, i) => (
-              <motion.a
-                key={post.title}
-                href={post.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex flex-col flex-shrink-0 w-[90%] sm:w-[45%] lg:w-[32%] snap-start bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 hover:border-cyan-400/30 hover:shadow-lg hover:shadow-cyan-500/10 transition-all duration-300"
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: i * 0.1 }}
-                viewport={{ once: true }}
+              {p.name}
+              <span
+                className={`text-xs px-1.5 py-0.5 rounded-full ${
+                  i === activeProject
+                    ? "bg-black/15 text-gray-900"
+                    : "bg-white/10 text-gray-400"
+                }`}
               >
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-xs text-gray-500">{post.date}</span>
-                </div>
+                {p.posts.length}/{p.totalWeeks}
+              </span>
+            </button>
+          ))}
+        </div>
 
-                <h3 className="text-lg font-semibold text-white mb-2 line-clamp-2 min-h-[3.5rem]">
-                  {post.title}
-                </h3>
-
-                <p className="text-sm text-gray-400 leading-relaxed mb-4 line-clamp-3">
-                  {post.summary}
-                </p>
-
-                {/* Tags Wrapper */}
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {post.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="text-xs px-2 py-1 bg-cyan-500/10 border border-cyan-400/20 text-cyan-300 rounded-full"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-
-                <div className="mt-auto flex items-center space-x-2 text-cyan-400 text-sm pt-2">
-                  <FaExternalLinkAlt size={12} />
-                  <span>Read More</span>
-                </div>
-              </motion.a>
+        <div className="flex flex-wrap items-center justify-between gap-4">
+          <div className="flex flex-wrap gap-2">
+            <button
+              onClick={() => handleQuarterSwitch("all")}
+              className={`text-xs px-3 py-1 rounded-full border transition-all duration-200 ${
+                activeQuarter === "all"
+                  ? "border-white/40 text-white bg-white/10"
+                  : "border-white/10 text-gray-500 hover:border-white/25 hover:text-gray-400"
+              }`}
+            >
+              All weeks
+            </button>
+            {visibleQuarters.map((q) => (
+              <button
+                key={q}
+                onClick={() => handleQuarterSwitch(q)}
+                className={`text-xs px-3 py-1 rounded-full border transition-all duration-200 ${
+                  activeQuarter === q
+                    ? "border-white/40 text-white bg-white/10"
+                    : "border-white/10 text-gray-500 hover:border-white/25 hover:text-gray-400"
+                }`}
+              >
+                {QUARTER_LABELS[q]}
+              </button>
             ))}
+          </div>
+
+          <div className="flex items-center gap-3">
+            <span className="text-xs text-gray-500">
+              {project.posts.length} of {project.totalWeeks} weeks
+            </span>
+            <div className="w-24 h-1 bg-white/10 rounded-full overflow-hidden">
+              <div
+                className="h-full bg-cyan-400 rounded-full transition-all duration-500"
+                style={{ width: `${progressPct}%` }}
+              />
+            </div>
           </div>
         </div>
 
-        {/* Scroll Indicator */}
-        <div className="flex justify-center gap-3 pt-2">
-          {posts.map((_, index) => (
-            <div
-              key={index}
-              className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-                index === activeIndex
-                  ? "bg-cyan-400 w-8"
-                  : "bg-cyan-400/30 hover:bg-cyan-400/50"
-              }`}
-            />
-          ))}
-        </div>
-      </div>
+        {/* Posts Grid */}
+        {filteredPosts.length === 0 ? (
+          <div className="py-20 text-center text-gray-600 text-sm">
+            No posts published yet for this project.
+          </div>
+        ) : (
+          <>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              <AnimatePresence initial={false}>
+                {displayedPosts.map((post, i) => (
+                  <motion.a
+                    key={post.week}
+                    href={post.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex flex-col bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-5 hover:border-cyan-400/30 hover:shadow-lg hover:shadow-cyan-500/10 transition-all duration-300"
+                    initial={{ opacity: 0, y: 12 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 8 }}
+                    transition={{
+                      duration: 0.2,
+                      delay:
+                        i < DEFAULT_VISIBLE ? 0 : (i - DEFAULT_VISIBLE) * 0.05,
+                    }}
+                    viewport={{ once: true }}
+                  >
+                    <span className="text-xs text-gray-600 font-medium mb-1">
+                      Week {post.week}
+                    </span>
+                    <h3 className="text-sm font-semibold text-white leading-snug mb-2 line-clamp-2 min-h-[2.5rem]">
+                      {post.title}
+                    </h3>
+                    <p className="text-xs text-gray-400 leading-relaxed mb-3 line-clamp-2">
+                      {post.summary}
+                    </p>
+                    <div className="flex flex-wrap gap-1.5 mb-4">
+                      {post.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="text-xs px-2 py-0.5 bg-cyan-500/10 border border-cyan-400/20 text-cyan-300 rounded-full"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    <div className="mt-auto flex items-center justify-between pt-3 border-t border-white/5">
+                      <span className="text-xs text-gray-600">{post.date}</span>
+                      <span className="flex items-center gap-1.5 text-xs text-cyan-400">
+                        <FaExternalLinkAlt size={10} />
+                        Read post
+                      </span>
+                    </div>
+                  </motion.a>
+                ))}
+              </AnimatePresence>
+            </div>
 
-      <style jsx>{`
-        .scrollbar-hide::-webkit-scrollbar {
-          display: none;
-        }
-      `}</style>
+            {/* Expand / Collapse */}
+            {hasMore && (
+              <div className="flex justify-center pt-2">
+                <button
+                  onClick={() => setExpanded((prev) => !prev)}
+                  className="flex items-center gap-2 px-5 py-2 rounded-full border border-white/15 text-sm text-gray-400 hover:border-white/30 hover:text-white transition-all duration-200"
+                >
+                  {expanded ? (
+                    <>
+                      <FaChevronUp size={11} />
+                      Show less
+                    </>
+                  ) : (
+                    <>
+                      <FaChevronDown size={11} />
+                      Show {hiddenCount} more{" "}
+                      {hiddenCount === 1 ? "post" : "posts"}
+                    </>
+                  )}
+                </button>
+              </div>
+            )}
+          </>
+        )}
+      </div>
     </section>
   );
 };
-
 export default BlogSection;
