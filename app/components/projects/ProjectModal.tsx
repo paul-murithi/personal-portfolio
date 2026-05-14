@@ -1,6 +1,6 @@
 "use client";
 import { motion, AnimatePresence } from "framer-motion";
-import { FiGithub, FiExternalLink, FiX } from "react-icons/fi";
+import { FiGithub, FiExternalLink, FiLink, FiX } from "react-icons/fi";
 import Image from "next/image";
 import { ProjectType } from "./projectsData";
 
@@ -96,6 +96,16 @@ export default function ProjectModal({ project, onClose }: Props) {
                   className="flex items-center text-sm text-gray-400 hover:text-cyan-400 transition"
                 >
                   <FiExternalLink className="mr-1" /> Live Demo
+                </a>
+              )}
+              {project.link && (
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center text-sm text-gray-400 hover:text-cyan-400 transition"
+                >
+                  <FiLink className="mr-1" /> Link
                 </a>
               )}
             </div>

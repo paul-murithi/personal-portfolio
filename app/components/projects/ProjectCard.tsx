@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { FiGithub, FiExternalLink } from "react-icons/fi";
+import { FiGithub, FiExternalLink, FiLink } from "react-icons/fi";
 import TiltWrapper from "./TiltWrapper";
 import { ProjectType } from "./projectsData";
 import ProjectPlaceholder from "./ProjectPlaceholder";
@@ -112,6 +112,17 @@ export default function ProjectCard({ project, index, onSelect }: Props) {
                 className="flex items-center text-sm hover:text-cyan-400 transition"
               >
                 <FiExternalLink className="mr-1" /> Demo
+              </a>
+            )}
+            {project.link && (
+              <a
+                href={project.link}
+                onClick={(e) => e.stopPropagation()}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center text-sm hover:text-cyan-400 transition"
+              >
+                <FiLink className="mr-1" /> Link
               </a>
             )}
           </div>

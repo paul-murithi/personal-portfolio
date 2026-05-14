@@ -8,21 +8,31 @@ export type ProjectType = {
   tags: string[];
   details: string;
   status: "done" | "in-progress" | "upcoming";
+  link?: string;
 };
 
 // Flagship
 // Trimester / Major Projects
 export const majorProjects: ProjectType[] = [
   {
-    title: "Sim-Pesa",
-    description: "An Open Source Payment Gateway Simulator",
+    title: "SimPesa",
+    description: "Open Source M-Pesa Payment Gateway Simulator",
     image: "",
-    github: "",
-    demo: "",
-    tags: ["Node", "Express JS", "PostgreSQL", "Redis"],
+    github: "https://github.com/paul-murithi/simpesa",
+    demo: "https://youtu.be/_EjKqlZ2IOk",
+    link: "https://simpesa-docs.vercel.app/",
+    tags: [
+      "Node.js",
+      "Express.js",
+      "PostgreSQL",
+      "Redis",
+      "BullMQ",
+      "Docker",
+      "TypeScript",
+    ],
     details:
-      " A robust backend system that simulates how M-Pesa (Daraja API) handles transactions. It creates a 'fake' payment environment where developers can test their apps.",
-    status: "in-progress",
+      "A production-style payment gateway simulator inspired by Safaricom's M-Pesa Daraja API. SimPesa helps developers test STK Push flows, callbacks, transaction state management, idempotency, and asynchronous payment processing in a controlled local environment.",
+    status: "done",
   },
   {
     title: "SokoFlow",
