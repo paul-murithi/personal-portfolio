@@ -36,7 +36,7 @@ const HeroProfileSection = () => {
             Hey, I&apos;m Paul Murithi
           </h1>
           <h2 className="text-lg md:text-xl text-gray-300 font-medium">
-            Backend Developer focused on FinTech & Distributed Systems
+            Backend Developer Focused on FinTech & Distributed Systems
           </h2>
           <p className="flex items-center justify-center text-gray-400 text-sm mt-2">
             <svg
@@ -54,12 +54,12 @@ const HeroProfileSection = () => {
             Mount Kenya University, Meru, Kenya
           </p>
 
-          <p className="text-gray-400 max-w-lg mx-auto leading-relaxed">
-            IT tudent building production-style systems. <br />
-            Currently exploring how real software handles transactions,
-            failures, concurrency, and scale, with a growing focus on FinTech
-            infrastructure and distributed backend systems.
-          </p>
+          {/* <p className="text-gray-400 max-w-lg mx-auto leading-relaxed">
+            Computer Science student focused on backend engineering,
+            transactional systems, and FinTech infrastructure. <br />
+            Building production-style software that explores concurrency,
+            resilience, and distributed architecture.
+          </p> */}
         </motion.div>
 
         {/* Contact & Social */}

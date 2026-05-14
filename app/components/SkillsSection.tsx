@@ -2,107 +2,123 @@
 "use client";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaPython, FaCode, FaBrain, FaServer } from "react-icons/fa";
-import {
-  SiFlask,
-  SiScikitlearn,
-  SiPostgresql,
-  SiFastapi,
-  SiDocker,
-} from "react-icons/si";
+import { FaCode, FaBrain, FaServer } from "react-icons/fa";
+import { SiPostgresql, SiDocker } from "react-icons/si";
 import { PageHeading } from "./PageHeading";
 
 const skillCategories = [
   {
-    category: "Programming & Foundations",
+    category: "Backend Engineering",
     skills: [
       {
-        name: "Python",
-        icon: <FaPython />,
+        name: "Node.js & TypeScript",
+        icon: <FaServer />,
       },
       {
-        name: "Git & CLI",
+        name: "Express.js",
+        icon: <FaServer />,
+      },
+      {
+        name: "REST API Design",
         icon: <FaCode />,
       },
       {
-        name: "Data Structures & Algorithms",
-        icon: <FaBrain />,
-      },
-      {
-        name: "Problem Solving & Debugging",
-        icon: <FaBrain />,
+        name: "Structured Logging",
+        icon: <FaCode />,
       },
     ],
   },
+
   {
-    category: "Backend & Databases",
+    category: "Databases & Transaction Systems",
     skills: [
       {
-        name: "Flask",
-        icon: <SiFlask />,
-      },
-      {
-        name: "FastAPI",
-        icon: <SiFastapi />,
-      },
-      {
-        name: "SQL / PostgreSQL",
+        name: "PostgreSQL",
         icon: <SiPostgresql />,
       },
       {
-        name: "Authentication & JWT",
-        icon: <FaServer />,
+        name: "SQL Transactions",
+        icon: <FaBrain />,
       },
       {
-        name: "Express JS / Node",
-        icon: <FaServer />,
+        name: "Row-Level Locking",
+        icon: <FaBrain />,
+      },
+      {
+        name: "Atomic Operations & Idempotency",
+        icon: <FaBrain />,
       },
     ],
   },
+
   {
-    category: "Cloud & DevOps",
+    category: "Async Systems & Queues",
+    skills: [
+      {
+        name: "Redis",
+        icon: <FaServer />,
+      },
+      {
+        name: "BullMQ",
+        icon: <FaServer />,
+      },
+      {
+        name: "Event-Driven Architecture",
+        icon: <FaCode />,
+      },
+      {
+        name: "Webhook Processing",
+        icon: <FaCode />,
+      },
+    ],
+  },
+
+  {
+    category: "DevOps & Infrastructure",
     skills: [
       {
         name: "Docker",
         icon: <SiDocker />,
       },
       {
-        name: "CI/CD (GitHub Actions)",
+        name: "Docker Compose",
+        icon: <SiDocker />,
+      },
+      {
+        name: "Linux CLI & Git",
         icon: <FaCode />,
       },
       {
-        name: "Redis / Caching",
-        icon: <FaServer />,
-      },
-      {
-        name: "Cloud Deployment (AWS / Render)",
+        name: "Environment Automation",
         icon: <FaServer />,
       },
     ],
   },
+
   {
-    category: "AI & Integrations",
+    category: "System Design & Reliability",
     skills: [
       {
-        name: "scikit-learn",
-        icon: <SiScikitlearn />,
-      },
-      {
-        name: "OpenAI API / GPT",
+        name: "Transactional State Machines",
         icon: <FaBrain />,
       },
       {
-        name: "Hugging Face Models",
+        name: "Concurrency Control",
         icon: <FaBrain />,
       },
       {
-        name: "LangChain & Prompt Engineering",
-        icon: <FaBrain />,
+        name: "Resilient System Design",
+        icon: <FaServer />,
+      },
+      {
+        name: "Failure Simulation",
+        icon: <FaServer />,
       },
     ],
   },
+
   {
-    category: "Frontend & Collaboration",
+    category: "Frontend & Developer Experience",
     skills: [
       {
         name: "React",
@@ -113,24 +129,11 @@ const skillCategories = [
         icon: <FaCode />,
       },
       {
-        name: "Open Source & Team Workflow",
-        icon: <FaServer />,
-      },
-    ],
-  },
-  {
-    category: "System Design & Professional Practice",
-    skills: [
-      {
-        name: "System Design",
-        icon: <FaServer />,
+        name: "Developer Tooling",
+        icon: <FaCode />,
       },
       {
-        name: "Monitoring & Analytics",
-        icon: <FaServer />,
-      },
-      {
-        name: "Portfolio & Deployment Strategy",
+        name: "Technical Documentation",
         icon: <FaCode />,
       },
     ],
@@ -141,14 +144,14 @@ const skillCategories = [
 const allSkills = skillCategories.flatMap((cat) => cat.skills);
 
 const highlightSkills = [
-  "Python",
-  "FastAPI",
-  "Docker",
+  "Node.js & TypeScript",
   "PostgreSQL",
-  "OpenAI API / GPT",
-  "React",
-  "System Design",
-  "CI/CD (GitHub Actions)",
+  "Docker",
+  "Redis",
+  "BullMQ",
+  "Concurrency Control",
+  "Transactional State Machines",
+  "Webhook Processing",
 ];
 
 const SkillsTabs = () => {
