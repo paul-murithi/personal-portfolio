@@ -17,7 +17,7 @@ export const majorProjects: ProjectType[] = [
   {
     title: "SimPesa",
     description: "Open Source M-Pesa Payment Gateway Simulator",
-    image: "",
+    image: "/simpesa.webp",
     github: "https://github.com/paul-murithi/simpesa",
     demo: "https://youtu.be/_EjKqlZ2IOk",
     link: "https://simpesa-docs.vercel.app/",
