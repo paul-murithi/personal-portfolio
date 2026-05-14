@@ -106,6 +106,55 @@ export const projects: Project[] = [
         url: "https://week-11.hashnode.dev/building-resilient-webhooks-exponential-backoff-and-the-art-of-retry-logic",
         tags: ["Backend", "Typescript", "Webhooks"],
       },
+      {
+        week: 12,
+        title:
+          "Simulating the Circle of Trust: Security Mocking Without the Overhead",
+        date: "April 10, 2026",
+        summary:
+          "Creating a secure testing environment by simulating trusted third-party interactions without the complexity of full mocks.",
+        url: "https://week-12.hashnode.dev/simulating-the-circle-of-trust-security-mocking-without-the-overhead",
+        tags: ["Security", "Testing", "Backend", "Typescript"],
+      },
+      {
+        week: 13,
+        title:
+          "Building a Live Transaction Dashboard: SSE, Redis Pub/Sub, and Real-Time React",
+        date: "April 17, 2026",
+        summary:
+          "Building a real-time transaction dashboard using Server-Sent Events (SSE), Redis Pub/Sub, and React for live updates.",
+        url: "https://week-13.hashnode.dev/building-a-live-transaction-dashboard-sse-redis-pub-sub-and-real-time-react",
+        tags: ["Backend", "Typescript", "Real-Time", "React"],
+      },
+      {
+        week: 14,
+        title:
+          "Building the Virtual Smartphone: Redis Pub/Sub and the Human-in-the-Loop Problem",
+        date: "April 26, 2026",
+        summary:
+          "Building a virtual smartphone interface for testing STK Push flows, using Redis Pub/Sub to simulate real-time interactions and addressing the human-in-the-loop challenge.",
+        url: "https://week-14.hashnode.dev/building-the-virtual-smartphone-redis-pub-sub-and-the-human-in-the-loop-problem",
+        tags: ["Backend", "Typescript", "Redis", "Virtualization"],
+      },
+      {
+        week: 15,
+        title: "The Onboarding Wizard: Docker, NGINX, and the localhost Trap",
+        date: "May 3, 2026",
+        summary:
+          "Building an onboarding experience that transforms a fresh docker compose up into a fully configured, ready-to-use simulator in under 60 seconds — with zero manual file editing.",
+        url: "https://week-15.hashnode.dev/the-onboarding-wizard-docker-nginx-and-the-localhost-trap",
+        tags: ["Backend", "Typescript", "Docker", "NGINX"],
+      },
+      {
+        week: 16,
+        title:
+          "Sim-Pesa Is Live: A 16-Week Build Log, A Finished Product, and Everything In Between",
+        date: "May 12, 2026",
+        summary:
+          "Reflecting on the journey of building Sim-Pesa, from the initial concept to the final product.",
+        url: "https://week-16.hashnode.dev/sim-pesa-is-live-a-16-week-build-log-a-finished-product-and-everything-in-between",
+        tags: ["Backend", "Typescript", "Product Development"],
+      },
     ],
   },
   {
