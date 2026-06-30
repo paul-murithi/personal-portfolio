@@ -3,29 +3,65 @@ import { AnimatePresence, motion } from "framer-motion";
 import { FaChevronDown, FaChevronUp, FaExternalLinkAlt } from "react-icons/fa";
 import { useState } from "react";
 import { PageHeading } from "./PageHeading";
-import { projects, QUARTER_LABELS } from "../utils/blog-projects";
+import { projects } from "../utils/blog-projects";
 
 const DEFAULT_VISIBLE = 6;
+const PERIODS_PER_GROUP = 4;
 
 const BlogSection = () => {
   const [activeProject, setActiveProject] = useState(0);
-  const [activeQuarter, setActiveQuarter] = useState<number | "all">("all");
+  const [activePeriod, setActivePeriod] = useState<number | "all">("all");
   const [expanded, setExpanded] = useState(false);
 
   const project = projects[activeProject];
+  const isMonthly = project.timelineUnit === "month";
+  const periodLabels =
+    project.periodLabels ??
+    Array.from({ length: 4 }, (_, index) =>
+      isMonthly
+        ? `Month ${index + 1}`
+        : `Weeks ${index * PERIODS_PER_GROUP + 1}–${(index + 1) * PERIODS_PER_GROUP}`,
+    );
 
-  const visibleQuarters = [0, 1, 2, 3].filter((q) =>
-    project.posts.some((p) => p.week >= q * 4 + 1 && p.week <= q * 4 + 4),
-  );
+  const getPostPeriodValue = (post: (typeof project.posts)[number]) =>
+    isMonthly ? post.month : post.week;
+
+  const visiblePeriods = isMonthly
+    ? periodLabels.map((_, index) => index)
+    : [0, 1, 2, 3].filter((periodIndex) =>
+        project.posts.some((post) => {
+          const periodValue = getPostPeriodValue(post);
+
+          if (!periodValue) {
+            return false;
+          }
+
+          return (
+            periodValue >= periodIndex * PERIODS_PER_GROUP + 1 &&
+            periodValue <= (periodIndex + 1) * PERIODS_PER_GROUP
+          );
+        }),
+      );
 
   const filteredPosts =
-    activeQuarter === "all"
+    activePeriod === "all"
       ? project.posts
-      : project.posts.filter(
-          (p) =>
-            p.week >= (activeQuarter as number) * 4 + 1 &&
-            p.week <= (activeQuarter as number) * 4 + 4,
-        );
+      : project.posts.filter((post) => {
+          const periodValue = getPostPeriodValue(post);
+
+          if (!periodValue) {
+            return false;
+          }
+
+          if (isMonthly) {
+            return periodValue === (activePeriod as number) + 1;
+          }
+
+          return (
+            periodValue >= (activePeriod as number) * PERIODS_PER_GROUP + 1 &&
+            periodValue <= ((activePeriod as number) + 1) * PERIODS_PER_GROUP
+          );
+        });
 
   const displayedPosts = expanded
     ? filteredPosts
@@ -34,17 +70,17 @@ const BlogSection = () => {
   const hiddenCount = filteredPosts.length - DEFAULT_VISIBLE;
 
   const progressPct = Math.round(
-    (project.posts.length / project.totalWeeks) * 100,
+    (project.posts.length / project.totalUnits) * 100,
   );
 
   const handleProjectSwitch = (i: number) => {
     setActiveProject(i);
-    setActiveQuarter("all");
+    setActivePeriod("all");
     setExpanded(false);
   };
 
-  const handleQuarterSwitch = (q: number | "all") => {
-    setActiveQuarter(q);
+  const handlePeriodSwitch = (period: number | "all") => {
+    setActivePeriod(period);
     setExpanded(false);
   };
 
@@ -76,7 +112,8 @@ const BlogSection = () => {
                     : "bg-white/10 text-gray-400"
                 }`}
               >
-                {p.posts.length}/{p.totalWeeks}
+                {p.posts.length}/{p.totalUnits}{" "}
+                {p.timelineUnit === "month" ? "mo" : "wk"}
               </span>
             </button>
           ))}
@@ -85,33 +122,34 @@ const BlogSection = () => {
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div className="flex flex-wrap gap-2">
             <button
-              onClick={() => handleQuarterSwitch("all")}
+              onClick={() => handlePeriodSwitch("all")}
               className={`text-xs px-3 py-1 rounded-full border transition-all duration-200 ${
-                activeQuarter === "all"
+                activePeriod === "all"
                   ? "border-white/40 text-white bg-white/10"
                   : "border-white/10 text-gray-500 hover:border-white/25 hover:text-gray-400"
               }`}
             >
-              All weeks
+              All {isMonthly ? "months" : "weeks"}
             </button>
-            {visibleQuarters.map((q) => (
+            {visiblePeriods.map((period) => (
               <button
-                key={q}
-                onClick={() => handleQuarterSwitch(q)}
+                key={period}
+                onClick={() => handlePeriodSwitch(period)}
                 className={`text-xs px-3 py-1 rounded-full border transition-all duration-200 ${
-                  activeQuarter === q
+                  activePeriod === period
                     ? "border-white/40 text-white bg-white/10"
                     : "border-white/10 text-gray-500 hover:border-white/25 hover:text-gray-400"
                 }`}
               >
-                {QUARTER_LABELS[q]}
+                {periodLabels[period]}
               </button>
             ))}
           </div>
 
           <div className="flex items-center gap-3">
             <span className="text-xs text-gray-500">
-              {project.posts.length} of {project.totalWeeks} weeks
+              {project.posts.length} of {project.totalUnits}{" "}
+              {isMonthly ? "months" : "weeks"}
             </span>
             <div className="w-24 h-1 bg-white/10 rounded-full overflow-hidden">
               <div
@@ -133,7 +171,7 @@ const BlogSection = () => {
               <AnimatePresence initial={false}>
                 {displayedPosts.map((post, i) => (
                   <motion.a
-                    key={post.week}
+                    key={post.week ?? post.month ?? i}
                     href={post.url}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -149,7 +187,7 @@ const BlogSection = () => {
                     viewport={{ once: true }}
                   >
                     <span className="text-xs text-gray-600 font-medium mb-1">
-                      Week {post.week}
+                      {post.month ? `Month ${post.month}` : `Week ${post.week}`}
                     </span>
                     <h3 className="text-sm font-semibold text-white leading-snug mb-2 line-clamp-2 min-h-[2.5rem]">
                       {post.title}

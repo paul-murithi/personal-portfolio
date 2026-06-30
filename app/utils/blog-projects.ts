@@ -4,7 +4,8 @@ export const projects: Project[] = [
   {
     id: 0,
     name: "SimPesa",
-    totalWeeks: 16,
+    timelineUnit: "week",
+    totalUnits: 16,
     posts: [
       {
         week: 1,
@@ -160,20 +161,27 @@ export const projects: Project[] = [
   {
     id: 1,
     name: "SokoFlow",
-    totalWeeks: 16,
-    posts: [],
+    timelineUnit: "month",
+    totalUnits: 4,
+    periodLabels: ["Month 1", "Month 2", "Month 3", "Month 4"],
+    posts: [
+      {
+        month: 1,
+        title:
+          "Shifting Left: How TDD Became the Foundation of SokoFlow's Core Engine ",
+        date: "Jan 16, 2026",
+        summary:
+          "My first dockerized multi-service local appliance for SokoFlow.",
+        url: "https://dev.to/paulmurithi/shifting-left-how-tdd-became-the-foundation-of-sokoflows-core-engine-485f",
+        tags: ["Redis", "PostgreSQL", "Docker", "Typescript"],
+      },
+    ],
   },
   {
     id: 2,
     name: "Sheria-Chatbot",
-    totalWeeks: 16,
+    timelineUnit: "week",
+    totalUnits: 16,
     posts: [],
   },
-];
-
-export const QUARTER_LABELS = [
-  "Weeks 1–4",
-  "Weeks 5–8",
-  "Weeks 9–12",
-  "Weeks 13–16",
 ];
