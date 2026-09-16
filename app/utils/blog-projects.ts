@@ -169,11 +169,37 @@ export const projects: Project[] = [
         month: 1,
         title:
           "Shifting Left: How TDD Became the Foundation of SokoFlow's Core Engine ",
-        date: "Jan 16, 2026",
+        date: "June 30, 2026",
         summary:
           "My first dockerized multi-service local appliance for SokoFlow.",
         url: "https://dev.to/paulmurithi/shifting-left-how-tdd-became-the-foundation-of-sokoflows-core-engine-485f",
-        tags: ["Redis", "PostgreSQL", "Docker", "Typescript"],
+        tags: ["Redis", "PostgreSQL", "Docker", "Python", "TDD"],
+      },
+      {
+        month: 2,
+        title:
+          "Thinking Like a Platform Engineer: Celery, Docker, CI/CD, and Getting SokoFlow Into the Cloud",
+        date: "July 22, 2026",
+        summary:
+          "Exploring the challenges of deploying SokoFlow to the cloud and the tools that made it possible.",
+        url: "https://dev.to/paulmurithi/thinking-like-a-platform-engineer-celery-docker-cicd-and-getting-sokoflow-into-the-cloud-109l",
+        tags: ["Backend", "Python", "Celery", "Docker", "CI/CD"],
+      },
+      {
+        month: 3,
+        title:
+          "Teaching SokoFlow to Remember: Building a Conversational Engine with FSMs, Redis, and WhatsApp Webhooks",
+        date: "August 23, 2026",
+        summary:
+          "Building a conversational engine for SokoFlow using finite state machines, Redis, and WhatsApp webhooks.",
+        url: "https://dev.to/paulmurithi/teaching-sokoflow-to-remember-building-a-conversational-engine-with-fsms-redis-and-whatsapp-56mp",
+        tags: [
+          "Backend",
+          "Python",
+          "Redis",
+          "Finite State Machines",
+          "WhatsApp Webhooks",
+        ],
       },
     ],
   },
