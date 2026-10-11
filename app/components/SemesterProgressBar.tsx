@@ -7,7 +7,7 @@ const SemesterProgressBar = () => {
     <section className="w-full py-12 px-6 bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950 text-white">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <PageHeading heading="Academic & Certifications" />
+        <PageHeading heading="Education & Credentials" />
 
         {/* Cards: Education + Certs */}
         <div
@@ -24,13 +24,14 @@ const SemesterProgressBar = () => {
                   <p className="text-cyan-300 text-sm mt-1">
                     Mount Kenya University (MKU)
                   </p>
-                  <p className="text-gray-400 text-xs mt-1">2025 - 2027</p>
+                  <p className="text-gray-400 text-xs mt-1">2025 – 2027</p>
                 </div>
-                <div className="text-xs text-gray-400">Ongoing</div>
+                <div className="text-xs text-gray-400 shrink-0">Ongoing</div>
               </div>
               <p className="text-gray-300 text-sm mt-4">
-                Continuing the academic journey with projects focused on cloud,
-                APIs, and ML.
+                3rd year with a deliberate focus on backend engineering and
+                FinTech systems — building production-grade software alongside
+                the degree, not after it.
               </p>
             </div>
 
@@ -43,14 +44,14 @@ const SemesterProgressBar = () => {
                   <p className="text-cyan-300 text-sm mt-1">
                     Technical University of Mombasa
                   </p>
-                  <p className="text-gray-400 text-xs mt-1">2021 - 2024</p>
+                  <p className="text-gray-400 text-xs mt-1">2021 – 2024</p>
                 </div>
               </div>
               <p className="text-gray-300 text-sm mt-4">
                 Graduated with{" "}
                 <span className="font-semibold text-cyan-300">Distinction</span>
                 . Focused on algorithms, systems programming, and software
-                engineering best practices.
+                engineering fundamentals.
               </p>
             </div>
           </div>
@@ -64,8 +65,13 @@ const SemesterProgressBar = () => {
                 <p className="text-cyan-300 text-sm mt-1">ALX Africa</p>
                 <p className="text-gray-400 text-xs mt-1">Verified</p>
                 <p className="text-gray-300 text-sm mt-3">
-                  Completed ALX’s 12-Month Software Engineering Program
-                  specializing in <b>Back-End Development.</b>
+                  Completed ALX&apos;s 12-month Software Engineering Programme
+                  specialising in{" "}
+                  <span className="font-semibold text-white">
+                    Back-End Development
+                  </span>
+                  . Covered systems programming, APIs, and collaborative
+                  engineering practices.
                 </p>
               </div>
 
@@ -76,13 +82,12 @@ const SemesterProgressBar = () => {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-3 py-2 bg-cyan-400 text-black text-sm rounded-md font-medium hover:brightness-95"
                 >
-                  View Certification
+                  View Certificate
                 </a>
               </div>
             </div>
           </div>
         </div>
-        {/* </div> */}
       </div>
     </section>
   );

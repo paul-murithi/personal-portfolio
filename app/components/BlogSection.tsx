@@ -90,7 +90,7 @@ const BlogSection = () => {
       className="py-20 px-6 bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950 text-white overflow-hidden"
     >
       <div className="max-w-7xl mx-auto space-y-6">
-        <PageHeading heading="Learning Reflections" />
+        <PageHeading heading="Build Log" />
 
         {/* Project Tabs */}
         <div className="flex flex-wrap gap-2">

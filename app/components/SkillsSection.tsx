@@ -1,157 +1,126 @@
-// SkillsTabs.tsx
+// SkillsSection.tsx
 "use client";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaCode, FaBrain, FaServer } from "react-icons/fa";
-import { SiPostgresql, SiDocker } from "react-icons/si";
+import {
+  SiNodedotjs,
+  SiExpress,
+  SiPython,
+  SiPostgresql,
+  SiRedis,
+  SiDocker,
+  SiGithubactions,
+  SiCelery,
+  SiFastapi,
+  SiPydantic,
+  SiNginx,
+  SiPytest,
+  SiJest,
+  SiGit,
+  SiSentry,
+} from "react-icons/si";
+import {
+  FaCode,
+  FaBrain,
+  FaServer,
+  FaShieldAlt,
+  FaRobot,
+} from "react-icons/fa";
 import { PageHeading } from "./PageHeading";
 
 const skillCategories = [
   {
-    category: "Backend Engineering",
+    category: "Languages & Runtimes",
     skills: [
-      {
-        name: "Node.js & TypeScript",
-        icon: <FaServer />,
-      },
-      {
-        name: "Express.js",
-        icon: <FaServer />,
-      },
-      {
-        name: "REST API Design",
-        icon: <FaCode />,
-      },
-      {
-        name: "Structured Logging",
-        icon: <FaCode />,
-      },
+      { name: "Node.js", icon: <SiNodedotjs /> },
+      { name: "TypeScript", icon: <FaCode /> },
+      { name: "Python", icon: <SiPython /> },
+      { name: "Java", icon: <FaCode /> },
     ],
   },
 
   {
-    category: "Databases & Transaction Systems",
+    category: "Frameworks & APIs",
     skills: [
-      {
-        name: "PostgreSQL",
-        icon: <SiPostgresql />,
-      },
-      {
-        name: "SQL Transactions",
-        icon: <FaBrain />,
-      },
-      {
-        name: "Row-Level Locking",
-        icon: <FaBrain />,
-      },
-      {
-        name: "Atomic Operations & Idempotency",
-        icon: <FaBrain />,
-      },
+      { name: "Express.js", icon: <SiExpress /> },
+      { name: "FastAPI", icon: <SiFastapi /> },
+      { name: "REST API Design", icon: <FaServer /> },
+      { name: "Zod", icon: <FaCode /> },
+      { name: "Pydantic", icon: <SiPydantic /> },
     ],
   },
 
   {
-    category: "Async Systems & Queues",
+    category: "Databases & Storage",
     skills: [
-      {
-        name: "Redis",
-        icon: <FaServer />,
-      },
-      {
-        name: "BullMQ",
-        icon: <FaServer />,
-      },
-      {
-        name: "Event-Driven Architecture",
-        icon: <FaCode />,
-      },
-      {
-        name: "Webhook Processing",
-        icon: <FaCode />,
-      },
+      { name: "PostgreSQL", icon: <SiPostgresql /> },
+      { name: "SQL Transactions & ACID", icon: <FaBrain /> },
+      { name: "Row-Level Locking", icon: <FaShieldAlt /> },
+      { name: "Atomic Idempotency", icon: <FaBrain /> },
+      { name: "Redis", icon: <SiRedis /> },
+    ],
+  },
+
+  {
+    category: "Async & Messaging",
+    skills: [
+      { name: "BullMQ", icon: <FaServer /> },
+      { name: "Celery", icon: <SiCelery /> },
+      { name: "Event-Driven Architecture", icon: <FaServer /> },
+      { name: "Webhook Processing", icon: <FaCode /> },
+      { name: "Finite State Machines", icon: <FaBrain /> },
     ],
   },
 
   {
     category: "DevOps & Infrastructure",
     skills: [
-      {
-        name: "Docker",
-        icon: <SiDocker />,
-      },
-      {
-        name: "Docker Compose",
-        icon: <SiDocker />,
-      },
-      {
-        name: "Linux CLI & Git",
-        icon: <FaCode />,
-      },
-      {
-        name: "Environment Automation",
-        icon: <FaServer />,
-      },
+      { name: "Docker & Compose", icon: <SiDocker /> },
+      { name: "GitHub Actions (CI/CD)", icon: <SiGithubactions /> },
+      { name: "NGINX", icon: <SiNginx /> },
+      { name: "Git", icon: <SiGit /> },
+      { name: "Sentry", icon: <SiSentry /> },
     ],
   },
 
   {
-    category: "System Design & Reliability",
+    category: "Testing & Reliability",
     skills: [
-      {
-        name: "Transactional State Machines",
-        icon: <FaBrain />,
-      },
-      {
-        name: "Concurrency Control",
-        icon: <FaBrain />,
-      },
-      {
-        name: "Resilient System Design",
-        icon: <FaServer />,
-      },
-      {
-        name: "Failure Simulation",
-        icon: <FaServer />,
-      },
+      { name: "Jest", icon: <SiJest /> },
+      { name: "Pytest", icon: <SiPytest /> },
+      { name: "Test-Driven Development", icon: <FaBrain /> },
+      { name: "Integration Testing", icon: <FaCode /> },
+      { name: "Chaos Testing", icon: <FaShieldAlt /> },
     ],
   },
 
   {
-    category: "Frontend & Developer Experience",
+    category: "AI Integration",
     skills: [
-      {
-        name: "React",
-        icon: <FaCode />,
-      },
-      {
-        name: "Tailwind CSS",
-        icon: <FaCode />,
-      },
-      {
-        name: "Developer Tooling",
-        icon: <FaCode />,
-      },
-      {
-        name: "Technical Documentation",
-        icon: <FaCode />,
-      },
+      { name: "LLM Function Calling", icon: <FaRobot /> },
+      { name: "Structured Output", icon: <FaCode /> },
+      { name: "Prompt Engineering", icon: <FaBrain /> },
+      { name: "Token & Cost Budgeting", icon: <FaCode /> },
     ],
   },
 ];
 
-// Flatten skills for "All" tab
+// Flatten all skills
 const allSkills = skillCategories.flatMap((cat) => cat.skills);
 
+// The skills shown by default on the "All" tab — cross-cutting highlights
 const highlightSkills = [
-  "Node.js & TypeScript",
+  "Node.js",
+  "TypeScript",
+  "Python",
   "PostgreSQL",
-  "Docker",
   "Redis",
+  "Docker & Compose",
+  "GitHub Actions (CI/CD)",
   "BullMQ",
-  "Concurrency Control",
-  "Transactional State Machines",
+  "Celery",
   "Webhook Processing",
+  "LLM Function Calling",
 ];
 
 const SkillsTabs = () => {
@@ -178,7 +147,7 @@ const SkillsTabs = () => {
               key={tab}
               onClick={() => {
                 setActiveTab(tab);
-                setShowAll(false); // reset showAll when switching tabs
+                setShowAll(false);
               }}
               className={`px-4 py-2 rounded-full text-sm font-medium border transition ${
                 activeTab === tab
@@ -204,16 +173,18 @@ const SkillsTabs = () => {
             {displayedSkills.map((skill) => (
               <div
                 key={skill.name}
-                className="flex flex-col items-center justify-center p-4 rounded-xl bg-white/5 border border-white/10 hover:border-cyan-400/40 transition"
+                className="flex flex-col items-center justify-center p-4 rounded-xl bg-white/5 border border-white/10 hover:border-cyan-400/40 hover:bg-white/8 transition"
               >
                 <div className="text-cyan-400 text-2xl mb-2">{skill.icon}</div>
-                <p className="text-sm font-medium">{skill.name}</p>
+                <p className="text-sm font-medium text-center leading-snug">
+                  {skill.name}
+                </p>
               </div>
             ))}
           </motion.div>
         </AnimatePresence>
 
-        {/* Show All toggle (only for All tab) */}
+        {/* Show All toggle — only on All tab */}
         {activeTab === "All" && (
           <div className="text-center">
             <button

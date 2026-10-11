@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 const ContactSection = () => {
   return (
@@ -16,7 +17,7 @@ const ContactSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          Let’s Build Something Together
+          Let&apos;s Work Together
         </motion.h2>
         <motion.p
           className="text-gray-400 max-w-2xl mx-auto"
@@ -24,8 +25,10 @@ const ContactSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          I’m always open to internships, collaborations, and exciting tech
-          projects. If you’d like to connect, feel free to drop me a message!
+          Open to backend engineering roles, internships, and technical
+          collaborations — especially anything touching payments, distributed
+          systems, or FinTech infrastructure. If you&apos;ve read this far, drop
+          me a line.
         </motion.p>
 
         {/* CTA Button */}
@@ -38,7 +41,7 @@ const ContactSection = () => {
             href="mailto:murithikirerapaul@gmail.com"
             className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-medium shadow-lg hover:shadow-cyan-500/30 hover:scale-105 transition transform"
           >
-            📩 Email Me
+            Get in Touch
           </a>
         </motion.div>
 
@@ -54,24 +57,27 @@ const ContactSection = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-400 hover:text-cyan-400 transition"
+            aria-label="GitHub"
           >
             <FaGithub size={22} />
           </a>
           <a
-            href="https://linkedin.com/in/paul-murithi-a14482355/"
+            href="https://www.linkedin.com/in/paul-murithi-a14482355"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-400 hover:text-cyan-400 transition"
+            aria-label="LinkedIn"
           >
             <FaLinkedin size={22} />
           </a>
           <a
-            href="https://github.com/paul-murithi"
+            href="https://x.com/__the__bird__"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-400 hover:text-cyan-400 transition"
+            aria-label="X (Twitter)"
           >
-            <FaTwitter size={22} />
+            <FaXTwitter size={22} />
           </a>
         </motion.div>
       </div>

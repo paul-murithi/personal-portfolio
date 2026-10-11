@@ -12,7 +12,7 @@ export type ProjectType = {
 };
 
 // Flagship
-// Trimester / Major Projects
+// Major Projects
 export const majorProjects: ProjectType[] = [
   {
     title: "SimPesa",
@@ -23,89 +23,93 @@ export const majorProjects: ProjectType[] = [
     link: "https://simpesa-docs.vercel.app/",
     tags: [
       "Node.js",
+      "TypeScript",
       "Express.js",
       "PostgreSQL",
       "Redis",
       "BullMQ",
       "Docker",
-      "TypeScript",
     ],
     details:
-      "A production-style payment gateway simulator inspired by Safaricom's M-Pesa Daraja API. SimPesa helps developers test STK Push flows, callbacks, transaction state management, idempotency, and asynchronous payment processing in a controlled local environment.",
+      "A production-style payment gateway simulator inspired by Safaricom's M-Pesa Daraja API. SimPesa helps developers test STK Push flows, callbacks, transaction state management, idempotency, and asynchronous payment processing in a controlled local environment. Includes a live transaction dashboard with SSE-based real-time updates, a virtual smartphone for STK push simulation, and a Redis sliding-window rate limiter.",
     status: "done",
   },
   {
     title: "SokoFlow",
-    description: "WhatsApp-First Inventory Bot",
+    description: "WhatsApp-First Conversational ERP for Kenyan SMEs",
     image: "",
     github: "",
     demo: "",
-    tags: ["Twillio", "PostgreSQL", "Docker", "Fast API"],
+    tags: [
+      "Python",
+      "FastAPI",
+      "PostgreSQL",
+      "Redis",
+      "Celery",
+      "Docker",
+      "Meta WhatsApp API",
+      "GitHub Actions",
+    ],
     details:
-      "An inventory management chatbot that operates over WhatsApp. It allows small business owners to track stock levels, receive low-stock alerts, and generate sales reports through simple chat commands.",
-    status: "upcoming",
+      "A conversational ERP that lets small Kenyan shopkeepers track inventory and record sales entirely through WhatsApp — no app downloads, no training required. Built with a TDD-first headless core, a Redis-backed finite state machine (FSM) for stateful conversation management, HMAC-verified webhooks, pg_trgm fuzzy product matching, async PDF report generation via Celery, and a full CI/CD pipeline. Real-world tested with actual shop owners.",
+    status: "done",
   },
   {
-    title: "Sheria-Chatbot",
-    description: "An AI-Powered Legal Advisor Chatbot for Kenyan Law",
+    title: "SokoFlow AI Layer",
+    description: "Natural-Language Shop Analytics via WhatsApp",
     image: "",
     github: "",
     demo: "",
-    tags: ["Vector DB", "LLM", "Redis", "Next.js"],
+    tags: [
+      "Python",
+      "LLM Function Calling",
+      "FastAPI",
+      "Redis",
+      "PostgreSQL",
+      "Pydantic",
+    ],
     details:
-      "A localized RAG (Retrieval Augmented Generation) system that answers legal questions using the Kenyan Constitution and Traffic Act as the source of truth",
-    status: "upcoming",
+      "An AI capability layer added to SokoFlow that lets shopkeepers ask free-form questions via WhatsApp ('which products are running low?', 'how does this week compare to last week?'). Uses LLM function calling with Pydantic-validated structured output against SokoFlow's existing internal APIs — the model proposes an action, SokoFlow's validated service layer executes it, keeping answers grounded in real data. Includes Redis response caching, per-shop token budgeting, and an evaluation set tracking intent-resolution accuracy and hallucination rate.",
+    status: "in-progress",
   },
 ];
 
-// Side Projects - single polished project per trimester
+// Side Projects
 export const minorProjects: ProjectType[] = [
   {
     title: "Exam Schedule Extractor",
     description:
-      "A simple Python-based tool that extracts your personal exam schedule from a timetable spreadsheet. Then displays it in a clean, readable format.",
+      "A Python-based tool that extracts your personal exam schedule from a timetable spreadsheet and displays it in a clean, readable format.",
     image: "",
     github: "https://github.com/paul-murithi/exam-timetable-extractor",
     demo: "https://exam-timetable-extractor.streamlit.app/",
     tags: ["Python", "Pandas", "Streamlit", "CSV"],
     details:
-      "Exam Schedule Extractor is a lightweight project that focuses on practical data extraction and presentation. It reads a user-uploaded timetable CSV, parses exam dates and times, and displays a personalized schedule. Built with Streamlit for quick UI and Pandas for data processing, it demonstrates file handling, data parsing, and user-centric design.",
+      "Exam Schedule Extractor is a lightweight project focused on practical data extraction and presentation. It reads a user-uploaded timetable CSV, parses exam dates and times, and displays a personalized schedule. Built with Streamlit for quick UI and Pandas for data processing, it demonstrates file handling, data parsing, and user-centric design.",
     status: "done",
   },
   {
-    title: "'Rate Limiter' Middleware",
+    title: "Rate Limiter Middleware",
     description:
-      "A custom middleware for Sim-Pesa API that blocks users if they make more than 10 requests per minute.",
+      "A Redis sliding-window rate limiter — blocks clients after 10 requests per 60 seconds and returns a 429 response with Retry-After headers.",
     image: "",
     github: "",
     demo: "",
-    tags: ["Python", "Pandas", "FastAPI", "Streamlit", "Visualization"],
+    tags: ["Node.js", "TypeScript", "Redis", "Express.js", "Security"],
     details:
-      "a custom middleware for your API that blocks users if they make more than 10 requests per minute.",
-    status: "upcoming",
+      "A production-style rate limiting middleware built as a supporting component for SimPesa. Uses a Redis sliding-window algorithm to track per-IP request counts, enforces a 10 req/60s limit with atomic Lua scripting to prevent race conditions, and returns RFC-compliant 429 responses with Retry-After headers. Demonstrates security and resource-protection awareness in a real API context.",
+    status: "done",
   },
   {
     title: "Dockerized Cron Job Scheduler",
     description:
-      "A production-ready cron job scheduler with Docker deployment, logging, and alerting features.",
+      "A containerized background job runner with scheduled task registration, structured logging, and configurable retry policies.",
     image: "",
     github: "",
     demo: "",
-    tags: ["FastAPI", "Docker", "Redis", "Auth", "Logging"],
+    tags: ["FastAPI", "Docker", "Redis", "Celery", "Logging"],
     details:
-      "A script that scrapes a news site every morning, summarizes it, and emails it to you.",
-    status: "upcoming",
-  },
-  {
-    title: '"Context-Aware Cache" Middleware',
-    description:
-      "A custom caching middleware that adjusts cache duration based on request context and user behavior.",
-    image: "",
-    github: "",
-    demo: "",
-    tags: ["FastAPI", "OpenAI API", "LangChain", "Auth", "Rate Limiting"],
-    details:
-      "An API that caches heavy AI responses in Redis, but invalidates the cache if the underlying data changes.",
+      "A containerized background job runner built around Celery Beat and Redis. Supports scheduled task registration, structured JSON logging per job run, configurable retry policies, and basic alerting on failure. Designed as a reusable infrastructure pattern.",
     status: "upcoming",
   },
 ];

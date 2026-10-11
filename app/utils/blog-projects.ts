@@ -171,7 +171,7 @@ export const projects: Project[] = [
           "Shifting Left: How TDD Became the Foundation of SokoFlow's Core Engine ",
         date: "June 30, 2026",
         summary:
-          "My first dockerized multi-service local appliance for SokoFlow.",
+          "Building SokoFlow's inventory logic first — before any WhatsApp integration — using Test-Driven Development to ensure a rock-solid business core.",
         url: "https://dev.to/paulmurithi/shifting-left-how-tdd-became-the-foundation-of-sokoflows-core-engine-485f",
         tags: ["Redis", "PostgreSQL", "Docker", "Python", "TDD"],
       },
@@ -221,9 +221,10 @@ export const projects: Project[] = [
   },
   {
     id: 2,
-    name: "Sheria-Chatbot",
+    name: "SokoFlow AI Layer",
     timelineUnit: "week",
-    totalUnits: 16,
+    totalUnits: 6,
+    periodLabels: ["Weeks 1–2", "Weeks 3–4", "Weeks 5–6"],
     posts: [],
   },
 ];

@@ -18,7 +18,7 @@ const HeroProfileSection = () => {
         >
           <Image
             src="/potrait.webp"
-            alt="Profile"
+            alt="Paul Murithi"
             fill
             className="object-cover"
             priority
@@ -33,12 +33,18 @@ const HeroProfileSection = () => {
           className="space-y-4"
         >
           <h1 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-            Hey, I&apos;m Paul Murithi
+            Paul Murithi
           </h1>
           <h2 className="text-lg md:text-xl text-gray-300 font-medium">
-            Backend Developer Focused on FinTech & Distributed Systems
+            Backend Engineer — FinTech &amp; Distributed Systems
           </h2>
-          <p className="flex items-center justify-center text-gray-400 text-sm mt-2">
+          <p className="text-gray-400 max-w-xl mx-auto leading-relaxed text-sm md:text-base">
+            I build production-grade backend systems that handle money, state,
+            and scale. Two shipped projects — a payment gateway simulator and a
+            WhatsApp-based ERP — both built without shortcuts: real concurrency
+            control, real webhooks, real users.
+          </p>
+          <p className="flex items-center justify-center text-gray-500 text-sm mt-1">
             <svg
               className="w-4 h-4 mr-2 text-cyan-400"
               viewBox="0 0 24 24"
@@ -51,15 +57,8 @@ const HeroProfileSection = () => {
               <path d="M21 10c0 6-9 11-9 11S3 16 3 10a9 9 0 1118 0z" />
               <circle cx="12" cy="10" r="3" fill="currentColor" />
             </svg>
-            Mount Kenya University, Meru, Kenya
+            Meru, Kenya
           </p>
-
-          {/* <p className="text-gray-400 max-w-lg mx-auto leading-relaxed">
-            Computer Science student focused on backend engineering,
-            transactional systems, and FinTech infrastructure. <br />
-            Building production-style software that explores concurrency,
-            resilience, and distributed architecture.
-          </p> */}
         </motion.div>
 
         {/* Contact & Social */}
@@ -104,7 +103,7 @@ const HeroProfileSection = () => {
           </a>
 
           <a
-            href="www.linkedin.com/in/paul-murithi-a14482355"
+            href="https://www.linkedin.com/in/paul-murithi-a14482355"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center text-sm text-gray-400 hover:text-cyan-400 transition"
