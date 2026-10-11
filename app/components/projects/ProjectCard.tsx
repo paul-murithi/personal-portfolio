@@ -18,10 +18,13 @@ export default function ProjectCard({ project, index, onSelect }: Props) {
       <motion.div
         className="h-full flex flex-col bg-white/5 backdrop-blur-md border border-white/10 rounded-xl overflow-hidden 
         shadow-lg hover:shadow-cyan-500/20 transition-all duration-300 cursor-pointer"
-        initial={{ opacity: 0, y: 40, scale: 0.95 }}
-        whileInView={{ opacity: 1, y: 0, scale: 1 }}
-        viewport={{ once: true }}
-        transition={{ delay: index * 0.08, type: "spring", stiffness: 80 }}
+        initial={{ opacity: 0, y: 30, scale: 0.98 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        transition={{
+          delay: index * 0.08,
+          duration: 0.4,
+          ease: "easeOut",
+        }}
         onClick={() => onSelect(project)}
       >
         {/* Image */}
@@ -68,11 +71,10 @@ export default function ProjectCard({ project, index, onSelect }: Props) {
           <motion.div
             className="flex flex-wrap gap-2 mt-3"
             initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
+            animate="visible"
             variants={{
               visible: {
-                transition: { staggerChildren: 0.05, delayChildren: 0.2 },
+                transition: { staggerChildren: 0.05, delayChildren: 0.1 },
               },
             }}
           >
