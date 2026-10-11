@@ -18,41 +18,44 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Paul Murithi | Full-Stack & AI Integration Developer",
+  title: "Paul Murithi | Backend Engineer",
   description:
-    "Official portfolio of Paul Murithi — a BSc IT student and developer building modern web systems with Python, FastAPI, React, and AI integrations. A 6-trimester journey from code to cloud to intelligent apps.",
+    "Portfolio of Paul Murithi — a backend engineer building production-grade systems in Node.js/TypeScript and Python. Specialising in FinTech infrastructure, transactional backends, distributed systems, and practical AI integration.",
   keywords: [
-    "Full Stack Developer",
+    "Backend Engineer",
     "Backend Developer",
-    "Cloud Engineer",
-    "AI Integration",
-    "FastAPI",
-    "React",
+    "FinTech Engineer",
+    "Node.js",
+    "TypeScript",
     "Python",
+    "FastAPI",
+    "PostgreSQL",
+    "Redis",
     "Docker",
-    "AWS",
-    "Machine Learning APIs",
-    "BSc IT",
+    "Distributed Systems",
+    "Payment Systems",
+    "Paul Murithi",
     "Paul Murithi Portfolio",
     "Software Engineer Kenya",
-    "Student Developer",
-    "AI Resume Assistant",
-    "ScholarMatch AI",
+    "SimPesa",
+    "SokoFlow",
+    "WhatsApp Bot",
+    "M-Pesa Developer",
   ],
   authors: [{ name: "Paul Murithi" }],
   creator: "Paul Murithi",
   openGraph: {
-    title: "Paul Murithi | Full-Stack Developer & AI Integrator",
+    title: "Paul Murithi | Backend Engineer",
     description:
-      "Portfolio and roadmap of Paul Murithi — showcasing scalable backends, cloud deployments, and AI-enhanced web apps built through his BSc IT journey.",
-    url: "", // TODO: add live domain URL once deployed
+      "Portfolio of Paul Murithi — backend engineer focused on FinTech infrastructure, transactional systems, and distributed backends. Built SimPesa and SokoFlow from scratch.",
+    url: "",
     siteName: "Paul Murithi | Developer Portfolio",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Paul Murithi - Full Stack Developer & AI Integrator",
+        alt: "Paul Murithi - Backend Engineer",
       },
     ],
     locale: "en_US",
@@ -60,9 +63,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Paul Murithi |  Full-Stack + Cloud + AI Integration",
+    title: "Paul Murithi | Backend Engineer",
     description:
-      "Building modern web systems and AI-powered solutions — follow Paul’s journey from BSc IT student to cloud-ready software engineer.",
+      "Building production-grade backends in Node.js/TypeScript and Python — payment systems, WhatsApp bots, and practical AI integration.",
     creator: "@__the__bird__",
     images: ["/og-image.jpg"],
   },
