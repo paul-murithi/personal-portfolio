@@ -201,6 +201,22 @@ export const projects: Project[] = [
           "WhatsApp Webhooks",
         ],
       },
+      {
+        month: 4,
+        title:
+          "Shipping the Capstone: PDF Reports, Chaos Testing, and the Architecture of a System That Fails Gracefully",
+        date: "September 22, 2026",
+        summary:
+          "Shipping the final version of SokoFlow, including PDF report generation, chaos testing, and designing a system that can handle failures gracefully.",
+        url: "https://dev.to/paulmurithi/shipping-the-capstone-pdf-reports-chaos-testing-and-the-architecture-of-a-system-that-fails-3e08",
+        tags: [
+          "Backend",
+          "Python",
+          "PDF Generation",
+          "Chaos Testing",
+          "System Design",
+        ],
+      },
     ],
   },
   {
