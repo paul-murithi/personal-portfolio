@@ -225,6 +225,57 @@ export const projects: Project[] = [
     timelineUnit: "week",
     totalUnits: 6,
     periodLabels: ["Weeks 1–2", "Weeks 3–4", "Weeks 5–6"],
-    posts: [],
+    posts: [
+      {
+        week: 1,
+        title:
+          "The LLM Interprets, the Backend Owns the Truth: Week 1 of Adding AI to a WhatsApp ERP",
+        date: "October 5, 2026",
+        summary:
+          "Building a conversational AI layer for SokoFlow, where the large language model interprets user queries while the backend maintains authoritative data.",
+        url: "https://dev.to/paulmurithi/the-llm-interprets-the-backend-owns-the-truth-week-1-of-adding-ai-to-a-whatsapp-erp-162f",
+        tags: ["AI", "LLM", "Python", "Tool calling", "Backend"],
+      },
+      {
+        week: 2,
+        title:
+          "The Gateway, the Registry and the Executor: Keeping Groq at the Edge of My Backend",
+        date: "October 11, 2026",
+        summary:
+          "Implementing a gateway, registry, and executor pattern to manage AI tool calls at the edge of the backend for SokoFlow.",
+        url: "https://dev.to/paulmurithi/the-gateway-the-registry-and-the-executor-keeping-groq-at-the-edge-of-my-backend-18jp",
+        tags: ["AI", "Backend", "Python", "Tool calling", "Architecture"],
+      },
+      {
+        week: 3,
+        title:
+          "ANALYTICS_QUERY Isn't a State: Plugging an LLM Into a WhatsApp FSM",
+        date: "October 18, 2026",
+        summary:
+          "Integrating a large language model into a finite state machine for WhatsApp, ensuring that analytics queries are handled correctly without being treated as state.",
+        url: "https://dev.to/paulmurithi/analyticsquery-isnt-a-state-plugging-an-llm-into-a-whatsapp-fsm-2al8",
+        tags: ["AI", "LLM", "Python", "Finite State Machines", "WhatsApp"],
+      },
+      {
+        week: 4,
+        title:
+          "When the Model Says Nothing: Failure Handling and Guardrails for an LLM in a WhatsApp ERP",
+        date: "November 1, 2026",
+        summary:
+          "Implementing failure handling and guardrails for a large language model integrated into a WhatsApp ERP, ensuring that the system can gracefully handle situations where the model provides no response.",
+        url: "https://dev.to/paulmurithi/when-the-model-says-nothing-failure-handling-and-guardrails-for-an-llm-in-a-whatsapp-erp-mhh",
+        tags: ["AI", "LLM", "Python", "Failure Handling", "WhatsApp"],
+      },
+      {
+        week: 5,
+        title:
+          "Evaluate the Decision, Not the Prose: Building an Eval Harness for an LLM Backend",
+        date: "November 16, 2026",
+        summary:
+          "Building an evaluation harness for an LLM backend to assess and improve the quality of AI-generated responses.",
+        url: "https://dev.to/paulmurithi/evaluate-the-decision-not-the-prose-building-an-eval-harness-for-an-llm-backend-22gd",
+        tags: ["AI", "LLM", "Python", "Evaluation", "Backend"],
+      },
+    ],
   },
 ];
